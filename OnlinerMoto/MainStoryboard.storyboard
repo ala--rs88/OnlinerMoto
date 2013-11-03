@@ -18,7 +18,7 @@
                                     <constraint firstAttribute="height" constant="499" id="T11-PJ-MBN"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VehicleItemCell" rowHeight="98" id="kBi-mh-dXY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="OnlinerMotoVehicleItemCell" rowHeight="98" id="kBi-mh-dXY" customClass="OnlinerMotoVehicleItemCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -57,8 +57,17 @@
                                             <constraint firstItem="Xpy-ij-e8V" firstAttribute="leading" secondItem="nYx-L8-4Et" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tKk-xB-6MF"/>
                                             <constraint firstItem="Xpy-ij-e8V" firstAttribute="top" secondItem="bcg-i1-ONs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ww0-CR-uI6"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="briefDescriptionTextView" destination="Xpy-ij-e8V" id="93W-om-9xe"/>
+                                            <outlet property="mainImageView" destination="nYx-L8-4Et" id="LGv-ET-HPa"/>
+                                            <outlet property="nameLabel" destination="bcg-i1-ONs" id="Zfv-pb-8qX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jxT-1b-zZa" id="bAa-II-Cfw"/>
+                                    <outlet property="delegate" destination="jxT-1b-zZa" id="8s6-GQ-3bp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -162,6 +171,14 @@
         </class>
         <class className="OnlinerMotoTaggedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoTaggedViewController.h"/>
+        </class>
+        <class className="OnlinerMotoVehicleItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehicleItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="briefDescriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="mainImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="OnlinerMotoVehiclesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehiclesViewController.h"/>

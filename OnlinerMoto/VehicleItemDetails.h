@@ -11,6 +11,8 @@
 
 @interface VehicleItemDetails : NSObject
 
+- (id)initWithVehicleItem:(VehicleItem *)vehicleItem;
+
 @property (nonatomic, strong) VehicleItem *vehicleItem;
 @property (nonatomic, strong) NSString *additionalDescription;
 @property (nonatomic, strong) NSString *location;

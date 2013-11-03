@@ -10,4 +10,18 @@
 
 @implementation VehicleItemDetails
 
+- (id)initWithVehicleItem:(VehicleItem *)vehicleItem
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.vehicleItem = vehicleItem;
+        self.location = @"Minsk";
+        self.additionalDescription = @"Additional info";
+    }
+    
+    return self;
+}
+
 @end

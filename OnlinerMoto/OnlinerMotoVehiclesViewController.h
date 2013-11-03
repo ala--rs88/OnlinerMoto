@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VehicleItemsProviderProtocol.h"
 
-@interface OnlinerMotoVehiclesViewController : UIViewController
+@interface OnlinerMotoVehiclesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (readonly, strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
 @end
