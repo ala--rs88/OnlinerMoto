@@ -11,7 +11,7 @@
 @interface OnlinerMotoVehicleItemCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UITextView *briefDescriptionTextView;
+@property (nonatomic, weak) IBOutlet UILabel *briefDescriptionLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *mainImageView;
 
 @end

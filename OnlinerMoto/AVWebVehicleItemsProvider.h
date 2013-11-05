@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "VehicleItemsProviderProtocol.h"
 
-@interface AVWebVehicleItemsProvider : NSObject <VehicleItemsProviderProtocol>
+@interface AVWebVehicleItemsProvider : NSObject <VehicleItemsProviderProtocol, NSURLConnectionDelegate>
 
-@property (nonatomic, assign) NSUInteger pageSize;
-@property (nonatomic, assign) NSUInteger totalItemsCount;
+@property (readonly, nonatomic, assign) NSUInteger totalItemsCount;
+
+- (id)init;
 
 - (void)applyFilter:(VehicleItemFilter *)filter;
-- (NSArray *)getPageWithIndex:(NSUInteger)index;
+- (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;
 - (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item;
 
 @end

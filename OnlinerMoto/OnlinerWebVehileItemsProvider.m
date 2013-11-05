@@ -1,21 +1,22 @@
 //
-//  AVWebVehicleItemsProvider.m
+//  OnlinerWebVehileItemsProvider.m
 //  OnlinerMoto
 //
-//  Created by Igor Karpov on 3.11.2013.
+//  Created by Igor Karpov on 4.11.2013.
 //  Copyright (c) 2013 KarpovIV. All rights reserved.
 //
 
-#import "AVWebVehicleItemsProvider.h"
+#import "OnlinerWebVehileItemsProvider.h"
+#import "HTMLParser.h"
 
-@interface AVWebVehicleItemsProvider()
+@interface OnlinerWebVehileItemsProvider()
 {
     NSMutableData *_responseData;
     bool _isResponseRecieved;
 }
 @end
 
-@implementation AVWebVehicleItemsProvider
+@implementation OnlinerWebVehileItemsProvider
 
 - (id)init
 {
@@ -26,7 +27,23 @@
         _isResponseRecieved = false;
         
         // Create the request.
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.av.by/public/index.php?event=3&category_id=1382&show_new=0"]];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://mb.onliner.by/search"]];
+        
+        NSURL * url = [NSURL URLWithString:@"http://mb.onliner.by/search"];
+        NSError * error;
+        NSStringEncoding *encoding;
+        NSString * htmlContent = [NSString stringWithContentsOfURL:url usedEncoding:encoding error:&error];
+        
+        // Specify that it will be a POST request
+        request.HTTPMethod = @"POST";
+        
+        // This is how we set header fields
+       // [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        
+        // Convert your data and set your request's HTTPBody property
+        NSString *stringData = @"max-price=150";
+        NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPBody = requestBodyData;
         
         // Create url connection and fire request
         NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -89,7 +106,34 @@
     // You can parse the stuff in your instance variable now
     _isResponseRecieved = true;
     NSString *responseBody = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"%@", responseBody);
+    NSError *error;
+    NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:_responseData
+                                                                 options:kNilOptions
+                                                                   error:&error];
+    if (error)
+    {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    
+  //  NSDictionary *results = responseJson[@"result"];
+    NSString *html = responseJson[@"result"][@"content"];
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    
+    if (error)
+    {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    
+    HTMLNode *bodyNode = [parser body];
+    
+    NSArray *trNodes = [bodyNode findChildTags:@"tr"];
+    
+    for (HTMLNode *trNode in trNodes)
+    {
+            NSLog(@"%@", [trNode getAttributeNamed:@"id"]);
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

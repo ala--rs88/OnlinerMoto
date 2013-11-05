@@ -7,8 +7,10 @@
 //
 
 #import "OnlinerMotoVehiclesViewController.h"
-#import "MockInMemoryVehicleItemsProvider.h"
+//#import "MockInMemoryVehicleItemsProvider.h"
+#import "AVWebVehicleItemsProvider.h"
 #import "OnlinerMotoVehicleItemCell.h"
+#import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"
 
 @interface OnlinerMotoVehiclesViewController ()
@@ -55,7 +57,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // todo: IK What if real page size is less than property value?
-    return [self.vehicleItemsProvider pageSize];
+    [[OnlinerWebVehileItemsProvider alloc] init];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,12 +68,12 @@
     
     OnlinerMotoVehicleItemCell *cell = (OnlinerMotoVehicleItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSArray *page = [self.vehicleItemsProvider getPageWithIndex:0];
+    NSArray *page = [self.vehicleItemsProvider getItemsFromIndex:0 count:10];
     
     VehicleItem *item = page[indexPath.row];
     
     cell.nameLabel.text = item.name;
-    cell.briefDescriptionTextView.text = item.briefDescription;
+    cell.briefDescriptionLabel.text = item.briefDescription;
     
     return cell;
 }
@@ -91,7 +94,8 @@
     }
     
     // todo: IK provide all hardcoding in one location
-    _vehicleItemsProvider = [[MockInMemoryVehicleItemsProvider alloc] init];
+    //_vehicleItemsProvider = [[MockInMemoryVehicleItemsProvider alloc] init];
+    _vehicleItemsProvider = [[AVWebVehicleItemsProvider alloc] init];
     
     return _vehicleItemsProvider;
 }

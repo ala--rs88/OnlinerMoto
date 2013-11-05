@@ -1,22 +1,19 @@
 //
-//  VehicleItemsProvider.h
+//  OnlinerWebVehileItemsProvider.h
 //  OnlinerMoto
 //
-//  Created by Igor Karpov on 3.11.2013.
+//  Created by Igor Karpov on 4.11.2013.
 //  Copyright (c) 2013 KarpovIV. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "VehicleItemsProviderProtocol.h"
 
-@class VehicleItem;
-@class VehicleItemFilter;
-@class VehicleItemDetails;
-
-@protocol VehicleItemsProviderProtocol <NSObject>
-
-@required
+@interface OnlinerWebVehileItemsProvider : NSObject <VehicleItemsProviderProtocol, NSURLConnectionDelegate>
 
 @property (readonly, nonatomic, assign) NSUInteger totalItemsCount;
+
+- (id)init;
 
 - (void)applyFilter:(VehicleItemFilter *)filter;
 - (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;

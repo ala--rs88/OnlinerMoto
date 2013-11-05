@@ -26,7 +26,6 @@
     
     if (self)
     {
-        self.pageSize = 5;
         items = [[NSMutableArray alloc] init];
         for (int i = 0; i < 13; i++)
         {
@@ -62,26 +61,19 @@
     return [items count];
 }
 
-- (NSArray *)getPageWithIndex:(NSUInteger)index
+- (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;
 {
-    NSRange pageRange;
+    if (startIndex + itemsCount > self.totalItemsCount)
+    {
+        NSException *exception = [NSException exceptionWithName:@"ArgumentOutOfRange"
+                                                         reason:@"Total items count is not sufficient."
+                                                       userInfo:nil];
+        [exception raise];
+    }
     
-    NSUInteger pageSize = self.pageSize;
-    NSUInteger totalCount = self.totalItemsCount;
-    
-    pageRange.location = index * pageSize;
-    if ((index + 1) * pageSize <= totalCount)
-    {
-        pageRange.length = pageSize;
-    }
-    else if (index * pageSize <= totalCount)
-    {
-        pageRange.length = totalCount - (index * pageSize);
-    }
-    else
-    {
-        return nil;
-    }
+    NSRange pageRange;   
+    pageRange.location = startIndex;
+    pageRange.length = itemsCount;
     
     return [items subarrayWithRange:pageRange];
 }

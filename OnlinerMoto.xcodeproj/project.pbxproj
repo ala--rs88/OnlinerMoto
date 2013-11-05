@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7218299D9C00AFF004 /* HTMLNode.m */; };
+		A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7418299D9C00AFF004 /* HTMLParser.m */; };
+		A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A99A0B7718299DE400AFF004 /* libxml2.dylib */; };
+		A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */; };
 		A9FAC48D182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
 		A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
 		A9FAC491182537ED008F3089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC490182537ED008F3089 /* CoreGraphics.framework */; };
@@ -48,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A99A0B7118299D9C00AFF004 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		A99A0B7218299D9C00AFF004 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		A99A0B7318299D9C00AFF004 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		A99A0B7418299D9C00AFF004 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		A99A0B7718299DE400AFF004 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
+		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC489182537ED008F3089 /* OnlinerMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FAC48C182537ED008F3089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9FAC48E182537ED008F3089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */,
 				A9FAC48D182537ED008F3089 /* UIKit.framework in Frameworks */,
 				A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */,
 				A9FAC491182537ED008F3089 /* CoreGraphics.framework in Frameworks */,
@@ -119,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A99A0B7018299D7600AFF004 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				A99A0B7118299D9C00AFF004 /* HTMLNode.h */,
+				A99A0B7218299D9C00AFF004 /* HTMLNode.m */,
+				A99A0B7318299D9C00AFF004 /* HTMLParser.h */,
+				A99A0B7418299D9C00AFF004 /* HTMLParser.m */,
+			);
+			name = HTMLParser;
+			sourceTree = "<group>";
+		};
 		A9FAC480182537ED008F3089 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +164,7 @@
 		A9FAC48B182537ED008F3089 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A99A0B7718299DE400AFF004 /* libxml2.dylib */,
 				A9FAC48C182537ED008F3089 /* UIKit.framework */,
 				A9FAC48E182537ED008F3089 /* Foundation.framework */,
 				A9FAC490182537ED008F3089 /* CoreGraphics.framework */,
@@ -153,6 +177,8 @@
 		A9FAC494182537ED008F3089 /* OnlinerMoto */ = {
 			isa = PBXGroup;
 			children = (
+				A9FAC4B7182537ED008F3089 /* Supporting Files */,
+				A99A0B7018299D7600AFF004 /* HTMLParser */,
 				A9FAC5251825E183008F3089 /* ViewModels */,
 				A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */,
 				A9FAC5181825C5EC008F3089 /* Protocols */,
@@ -187,7 +213,6 @@
 			children = (
 				A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */,
 				A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */,
-				A9FAC4B7182537ED008F3089 /* Supporting Files */,
 			);
 			path = OnlinerMotoTests;
 			sourceTree = "<group>";
@@ -199,7 +224,8 @@
 				A9FAC4B9182537ED008F3089 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
+			path = OnlinerMotoTests;
+			sourceTree = SOURCE_ROOT;
 		};
 		A9FAC50318254E21008F3089 /* ViewControllers */ = {
 			isa = PBXGroup;
@@ -251,6 +277,8 @@
 				A9FAC5201825C9BE008F3089 /* AVWebVehicleItemsProvider.m */,
 				A9FAC5221825CF78008F3089 /* MockInMemoryVehicleItemsProvider.h */,
 				A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */,
+				A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */,
+				A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */,
 			);
 			name = VehicleItemsProviders;
 			sourceTree = "<group>";
@@ -388,6 +416,9 @@
 				A9FAC5211825C9BE008F3089 /* AVWebVehicleItemsProvider.m in Sources */,
 				A9FAC5241825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m in Sources */,
 				A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */,
+				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
+				A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */,
+				A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +521,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -501,6 +533,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -560,6 +593,7 @@
 				A9FAC4C3182537ED008F3089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9FAC4C4182537ED008F3089 /* Build configuration list for PBXNativeTarget "OnlinerMotoTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +602,7 @@
 				A9FAC4C6182537ED008F3089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
