@@ -29,7 +29,7 @@
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.av.by/public/index.php?event=3&category_id=1382&show_new=0"]];
         
         // Create url connection and fire request
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        //NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     }
     
     return self;
@@ -43,7 +43,7 @@
     [exception raise];
 }
 
-- (NSUInteger)totalItemsCount
+- (NSUInteger)totalVehicleItemsCount
 {
     return 17;
 }

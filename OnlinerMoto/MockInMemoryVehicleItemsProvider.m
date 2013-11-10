@@ -56,7 +56,7 @@
     [exception raise];
 }
 
-- (NSUInteger)totalItemsCount
+- (NSUInteger)totalVehicleItemsCount
 {
     return [items count];
 }

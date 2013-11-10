@@ -177,7 +177,6 @@
 		A9FAC494182537ED008F3089 /* OnlinerMoto */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAC4B7182537ED008F3089 /* Supporting Files */,
 				A99A0B7018299D7600AFF004 /* HTMLParser */,
 				A9FAC5251825E183008F3089 /* ViewModels */,
 				A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */,
@@ -213,6 +212,7 @@
 			children = (
 				A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */,
 				A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */,
+				A9FAC4B7182537ED008F3089 /* Supporting Files */,
 			);
 			path = OnlinerMotoTests;
 			sourceTree = "<group>";

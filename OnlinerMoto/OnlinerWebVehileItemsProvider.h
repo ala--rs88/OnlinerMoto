@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VehicleItemsProviderProtocol.h"
 
-@interface OnlinerWebVehileItemsProvider : NSObject <VehicleItemsProviderProtocol, NSURLConnectionDelegate>
+@interface OnlinerWebVehileItemsProvider : NSObject <VehicleItemsProviderProtocol>
 
 @property (readonly, nonatomic, assign) NSUInteger totalItemsCount;
 

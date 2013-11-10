@@ -19,6 +19,7 @@
 @property (readonly, nonatomic, assign) NSUInteger totalItemsCount;
 
 - (void)applyFilter:(VehicleItemFilter *)filter;
+// todo: consider renaming
 - (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;
 - (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item;
 

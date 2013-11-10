@@ -13,4 +13,6 @@
 
 @property (readonly, strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
 @end

@@ -12,9 +12,12 @@
 #import "OnlinerMotoVehicleItemCell.h"
 #import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"
+#import "VehicleItemFilter.h"
 
 @interface OnlinerMotoVehiclesViewController ()
-
+{
+    NSArray *_vehicleItemsToBeDisplayed;
+}
 @end
 
 @implementation OnlinerMotoVehiclesViewController
@@ -29,8 +32,10 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
+        _vehicleItemsToBeDisplayed = [[NSArray alloc] init];
     }
     return self;
 }
@@ -38,7 +43,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    // todo: IS View loaded multiple times?
+    
+    [self.vehicleItemsProvider applyFilter:[[VehicleItemFilter alloc] init]];
+    
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // todo: is this section synchronized???
+        
+        _vehicleItemsToBeDisplayed = [self.vehicleItemsProvider getItemsFromIndex:0 count:30];
+        
+        // todo: disable paging functionality for the request time
+        // todo: consider case: request is sent, then filter is updated;
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,9 +77,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // todo: IK What if real page size is less than property value?
-    [[OnlinerWebVehileItemsProvider alloc] init];
-    return 0;
+    // todo: consider multiple firing
+    NSLog(@"numberOfRowsInSection");
+    return [_vehicleItemsToBeDisplayed count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,22 +89,21 @@
     
     OnlinerMotoVehicleItemCell *cell = (OnlinerMotoVehicleItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSArray *page = [self.vehicleItemsProvider getItemsFromIndex:0 count:10];
-    
-    VehicleItem *item = page[indexPath.row];
+    VehicleItem *item = _vehicleItemsToBeDisplayed[indexPath.row];
     
     cell.nameLabel.text = item.name;
     cell.briefDescriptionLabel.text = item.briefDescription;
+    cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
     
     return cell;
 }
 
+// todo: Is this method mandatory?
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
-
 
 #pragma mark - Data providers
 
@@ -93,9 +113,8 @@
         return _vehicleItemsProvider;
     }
     
-    // todo: IK provide all hardcoding in one location
-    //_vehicleItemsProvider = [[MockInMemoryVehicleItemsProvider alloc] init];
-    _vehicleItemsProvider = [[AVWebVehicleItemsProvider alloc] init];
+    // todo: IK place all hardcoding in one location
+    _vehicleItemsProvider = [[OnlinerWebVehileItemsProvider alloc] init];
     
     return _vehicleItemsProvider;
 }
