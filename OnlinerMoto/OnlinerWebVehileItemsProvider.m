@@ -60,7 +60,7 @@
     }
 }
 
-- (NSUInteger)totalVehicleItemsCount
+- (NSUInteger)totalItemsCount
 {
     return (_totalVehicleItemsCount) < 0 ? 0 : _totalVehicleItemsCount;
 }
@@ -86,12 +86,26 @@
         _currentLoadedPageIndex = onlinerPageIndexToRetrieveFrom;
     }
     
+    
+    NSUInteger rangeStartIndex = startIndex % _onlinerPageSize;
+    NSUInteger rangeLength = itemsCount;
+    
+    if (rangeStartIndex >= [_loadedVehicleItems count])
+    {
+        return nil;
+    }
+    
+    if (rangeStartIndex + rangeLength > [_loadedVehicleItems count]
+        && [_loadedVehicleItems count] > 0)
+    {
+        rangeLength = [_loadedVehicleItems count] - rangeStartIndex;
+    }
+    
     NSRange range;
-    range.location = startIndex;
-    range.length = startIndex + itemsCount <= [_loadedVehicleItems count] ? itemsCount : [_loadedVehicleItems count] - startIndex;
+    range.location = rangeStartIndex;
+    range.length = rangeLength;
         
     return [_loadedVehicleItems subarrayWithRange:range];
-
 }
 
 - (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item
@@ -104,52 +118,6 @@
 }
 
 
-
-/*
-#pragma mark NSURLConnection Delegate Methods
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-   _responseData = [[NSMutableData alloc] init];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [_responseData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{    
-    NSError *error;
-    NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:_responseData
-                                                                 options:kNilOptions
-                                                                   error:&error];
-    if (error)
-    {
-        // todo: handle error
-        NSLog(@"Error: %@", error);
-        return;
-    }
-    
-    // todo: check json for Success==true
-    
-    _loadedVehicleItems = [OnlinerWebVehileItemsProvider parseJsonObjectForVehicleItems:responseJson];
-    // todo: Handle possible changes of TotalCount
-    _totalVehicleItemsCount = [OnlinerWebVehileItemsProvider parseJsonObjectForTotalVehicleItemsCount:responseJson];
-    
-    _isLoadingInProgress = false;
-    
-    [self processWaitingProviderDelegate];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [self resetProviderState];
-    
-    // todo: handle error
-    NSLog(@"Error: %@", error);
-}
-*/
 
 #pragma mark Private methods
 
@@ -175,10 +143,11 @@
         [completeHttpBody appendFormat:@"page=%u", pageIndex + 1];
     }  
     
-    return [OnlinerWebVehileItemsProvider syncLoadVehicleItemsWithHttpBodyData:[completeHttpBody dataUsingEncoding:NSUTF8StringEncoding]];
+    return [self syncLoadVehicleItemsWithHttpBodyData:[completeHttpBody dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
-+ (NSArray *)syncLoadVehicleItemsWithHttpBodyData:(NSData *)httpBodyData
+// todo: try to get rid of side effect
+- (NSArray *)syncLoadVehicleItemsWithHttpBodyData:(NSData *)httpBodyData
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://mb.onliner.by/search"]];
     request.HTTPMethod = @"POST";
@@ -190,7 +159,9 @@
     
     NSURLResponse* response = nil;
     NSError *error;
-    NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSData* data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:&error];
     
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:kNilOptions
@@ -202,18 +173,26 @@
         return nil;
     }
     
-    // todo: IK handle total Count
-    return [OnlinerWebVehileItemsProvider parseJsonObjectForVehicleItems:responseJson];
+    bool isLoadingSuccessful = [OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:responseJson];
+    
+    _totalVehicleItemsCount = isLoadingSuccessful ? [OnlinerWebVehileItemsProvider parseJsonObjectForTotalVehicleItemsCount:responseJson] : -1;
+    
+    return isLoadingSuccessful ? [OnlinerWebVehileItemsProvider parseJsonObjectForVehicleItems:responseJson] : nil;
 }
 
+
++ (bool)parseJsonObjectForSuccess:(NSDictionary *)jsonObject
+{
+    return [jsonObject[@"success"] boolValue];
+}
 
 + (NSUInteger)parseJsonObjectForTotalVehicleItemsCount:(NSDictionary *)jsonObject
 {
-    return [jsonObject[@"result"][@"counters"][@"total"] integerValue];
+    return [jsonObject[@"result"][@"counters"][@"realCount"] integerValue];
 }
 
 + (NSArray *)parseJsonObjectForVehicleItems:(NSDictionary *)jsonObject
-{
+{    
     NSString *html = jsonObject[@"result"][@"content"];
     
     NSError *error;
@@ -259,7 +238,7 @@
     
     vehicleItem.mileage = [[[[tdTxt findChildOfClass:@"dist"] findChildTag:@"strong"] contents] integerValue];
     
-    vehicleItem.price = [[[[[tdCost findChildOfClass:@"big"] findChildTag:@"a"] findChildTag:@"strong"] contents] integerValue];
+    vehicleItem.price = [[[[[[tdCost findChildOfClass:@"big"] findChildTag:@"a"] findChildTag:@"strong"] contents] stringByReplacingOccurrencesOfString:@" " withString:@"" ] integerValue];
     
     NSString *mainPhotoUrl = [[[tdPhoto findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
     vehicleItem.mainPhoto = [NSData dataWithContentsOfURL: [NSURL URLWithString:mainPhotoUrl]];
