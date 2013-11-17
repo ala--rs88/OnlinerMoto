@@ -17,8 +17,6 @@
     if (self)
     {
         self.vehicleItem = vehicleItem;
-        self.location = @"Minsk";
-        self.additionalDescription = @"Additional info";
     }
     
     return self;

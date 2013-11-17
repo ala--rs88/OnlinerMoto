@@ -9,6 +9,7 @@
 #import "OnlinerWebVehileItemsProvider.h"
 #import "HTMLParser.h"
 #import "VehicleItem.h"
+#import "VehicleItemDetails.h"
 
 @interface OnlinerWebVehileItemsProvider()
 {
@@ -110,13 +111,21 @@
 
 - (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item
 {
-    NSException *exception = [NSException exceptionWithName:@"NotImplementedException"
-                                                     reason:@"This method is not yet implemented."
-                                                   userInfo:nil];
-    [exception raise];
-    return nil;
+    NSError *error;
+    HTMLParser *parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:item.detailsUrl] error:&error];
+    
+    if (error)
+    {
+        // todo: handle error
+        NSLog(@"Error: %@", error);
+        return nil;
+    }
+    
+    VehicleItemDetails *itemDetails = [OnlinerWebVehileItemsProvider parseVehicleItemDetailsBody:[parser body]];
+    itemDetails.vehicleItem = item;
+    
+    return itemDetails;
 }
-
 
 
 #pragma mark Private methods
@@ -229,7 +238,7 @@
     // todo: parse name postfix
     
     HTMLNode *detailsUrlWithName = [[[tdTxt findChildTag:@"h2"] findChildTag:@"span"] findChildTag:@"a"];
-    vehicleItem.detailsUrl = [detailsUrlWithName getAttributeNamed:@"href"];
+    vehicleItem.detailsUrl = [NSString stringWithFormat:@"http://mb.onliner.by%@", [detailsUrlWithName getAttributeNamed:@"href"]];
     vehicleItem.name = [[detailsUrlWithName findChildTag:@"strong"] contents];
     
     vehicleItem.briefDescription = [[tdTxt findChildTag:@"p"] contents];
@@ -244,6 +253,41 @@
     vehicleItem.mainPhoto = [NSData dataWithContentsOfURL: [NSURL URLWithString:mainPhotoUrl]];
     
     return vehicleItem;
+}
+
++ (VehicleItemDetails *)parseVehicleItemDetailsBody:(HTMLNode *)body
+{
+    VehicleItemDetails *itemDetails = [[VehicleItemDetails alloc] init];
+    
+    HTMLNode *photosAndDescriptionNode = [body findChildOfClass:@"autoba-msglongcont"];
+    NSArray *photosAndDescriptionNodeChildren = [photosAndDescriptionNode children];
+    
+    NSMutableString *description = [[NSMutableString alloc] init];
+    
+    for (HTMLNode *node in photosAndDescriptionNodeChildren)
+    {
+        if ([node nodetype] == HTMLPNode)
+        {
+            // todo: clean strings up from html
+            [description appendFormat:@"%@\n", [node contents]];
+        }
+    }
+    
+    NSArray *photoLinkNodes = [photosAndDescriptionNode findChildrenWithAttribute:@"id" matchingName:@"thumb_" allowPartial:YES];
+    NSMutableArray *photosDatas = [[NSMutableArray alloc] init];
+    
+    for (HTMLNode *photoNode in photoLinkNodes)
+    {
+        NSString *photoUrlString = [[photoNode findChildTag:@"img"] getAttributeNamed:@"src"];
+        NSData *photoData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photoUrlString]];
+        [photosDatas addObject:photoData];
+    }
+    
+    itemDetails.location = [[[body findChildOfClass:@"content"] findChildTags:@"p"][2] contents];
+    itemDetails.additionalDescription = [description copy];
+    itemDetails.allPhotos = [photosDatas copy];
+    
+    return itemDetails;
 }
 
 @end

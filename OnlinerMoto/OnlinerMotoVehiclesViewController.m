@@ -13,6 +13,7 @@
 #import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"
 #import "VehicleItemFilter.h"
+#import "OnlinerMotoVehicleDetailsViewController.h"
 
 @interface OnlinerMotoVehiclesViewController ()
 {
@@ -113,6 +114,18 @@
     return NO;
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"VehicleItemDetailsSegue"])
+    {
+        OnlinerMotoVehicleDetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
+        detailsViewController.VehicleItem = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
+    }
+}
+
+
 #pragma mark - Navigation bar
 
 - (IBAction)previousPageButtonAction:(id)sender
@@ -149,6 +162,7 @@
     _isPreviousPageButtonEnabledOldValue = self.previousPageButton.isEnabled;
     _isNextPageButtonEnabledOldValue = self.nextPageButton.isEnabled;
     
+    // todo: try to hide instead of disable
     [self.previousPageButton setEnabled:previousButtonEnabled];
     [self.nextPageButton setEnabled:nextButtonEnabled];
 }
@@ -166,7 +180,7 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // todo: is this section synchronized???
         
         NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageIndex * _pageSize)
@@ -177,7 +191,7 @@
         
         // todo: consider totalCount changing
         
-        dispatch_async( dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self endLoadPageWithIndex:pageIndex
                     loadedVehicleItems:loadedVehicleItems
                 totalVehicleItemsCount:self.vehicleItemsProvider.totalItemsCount];
