@@ -239,15 +239,23 @@
     
     HTMLNode *detailsUrlWithName = [[[tdTxt findChildTag:@"h2"] findChildTag:@"span"] findChildTag:@"a"];
     vehicleItem.detailsUrl = [NSString stringWithFormat:@"http://mb.onliner.by%@", [detailsUrlWithName getAttributeNamed:@"href"]];
-    vehicleItem.name = [[detailsUrlWithName findChildTag:@"strong"] contents];
     
-    vehicleItem.briefDescription = [[tdTxt findChildTag:@"p"] contents];
+    
+    NSString *name = [[detailsUrlWithName allContents] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"  +" options:NSRegularExpressionCaseInsensitive error:&error];
+    vehicleItem.name = [regex stringByReplacingMatchesInString:name options:0 range:NSMakeRange(0, [name length]) withTemplate:@""];
+        
+    vehicleItem.briefDescription = [[[tdTxt findChildTag:@"p"] contents] stringByReplacingOccurrencesOfString:@"мотоцикл, " withString:@""];
     
     vehicleItem.year = [[[tdTxt findChildOfClass:@"year"] contents] integerValue];
     
-    vehicleItem.mileage = [[[[tdTxt findChildOfClass:@"dist"] findChildTag:@"strong"] contents] integerValue];
+    vehicleItem.mileage = [[[[[tdTxt findChildOfClass:@"dist"] findChildTag:@"strong"] contents]
+                            stringByReplacingOccurrencesOfString:@" " withString:@""]  integerValue];
     
-    vehicleItem.price = [[[[[[tdCost findChildOfClass:@"big"] findChildTag:@"a"] findChildTag:@"strong"] contents] stringByReplacingOccurrencesOfString:@" " withString:@"" ] integerValue];
+    vehicleItem.price = [[[[[[tdCost findChildOfClass:@"big"] findChildTag:@"a"] findChildTag:@"strong"] contents]
+                          stringByReplacingOccurrencesOfString:@" " withString:@""] integerValue];
     
     NSString *mainPhotoUrl = [[[tdPhoto findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
     vehicleItem.mainPhoto = [NSData dataWithContentsOfURL: [NSURL URLWithString:mainPhotoUrl]];
@@ -269,7 +277,7 @@
         if ([node nodetype] == HTMLPNode)
         {
             // todo: clean strings up from html
-            [description appendFormat:@"%@\n", [node contents]];
+            [description appendFormat:@"%@\n", [[node allContents] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         }
     }
     
@@ -279,12 +287,14 @@
     for (HTMLNode *photoNode in photoLinkNodes)
     {
         NSString *photoUrlString = [[photoNode findChildTag:@"img"] getAttributeNamed:@"src"];
+        photoUrlString = [photoUrlString stringByReplacingOccurrencesOfString:@"100x100" withString:@"800x800"];
+        
         NSData *photoData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photoUrlString]];
         [photosDatas addObject:photoData];
     }
     
     itemDetails.location = [[[body findChildOfClass:@"content"] findChildTags:@"p"][2] contents];
-    itemDetails.additionalDescription = [description copy];
+    itemDetails.additionalDescription = [[description copy] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     itemDetails.allPhotos = [photosDatas copy];
     
     return itemDetails;

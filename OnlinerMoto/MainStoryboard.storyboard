@@ -127,11 +127,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="t7V-jF-oI4" detailTextLabel="iyS-PZ-RSm" style="IBUITableViewCellStyleValue2" id="UQQ-wo-Unf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="t7V-jF-oI4" detailTextLabel="iyS-PZ-RSm" style="IBUITableViewCellStyleValue2" id="UQQ-wo-Unf">
                                         <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t7V-jF-oI4">
@@ -281,34 +281,45 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Photos" id="M01-of-GFa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XEa-ym-5DL">
-                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="320" id="XEa-ym-5DL">
+                                        <rect key="frame" x="0.0" y="352" width="320" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="319"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DmU-Nj-8Hh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DmU-Nj-8Hh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TiD-Jz-xQt">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eqR-C1-Fg1">
+                                                        <size key="itemSize" width="320" height="320"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JJu-6A-sDK">
-                                                            <rect key="frame" x="0.0" y="-13" width="50" height="50"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnlinerMotoPhotoCell" id="JJu-6A-sDK" customClass="OnlinerMotoPhotoCell">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="COl-6j-2YW">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </imageView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
+                                                            <size key="customSize" width="320" height="320"/>
+                                                            <connections>
+                                                                <outlet property="photoImage" destination="COl-6j-2YW" id="RPh-dj-nIJ"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
+                                                        <outlet property="dataSource" destination="LZZ-Nv-f53" id="Mic-kd-bgO"/>
                                                         <outlet property="delegate" destination="LZZ-Nv-f53" id="d64-Xo-a9H"/>
                                                     </connections>
                                                 </collectionView>
@@ -320,11 +331,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Additional description" id="w3b-H4-ui9">
                                 <cells>
-                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GcW-Av-ZXW">
-                                        <rect key="frame" x="0.0" y="418" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="GcW-Av-ZXW">
+                                        <rect key="frame" x="0.0" y="694" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgv-kD-ZYJ">
@@ -346,7 +357,9 @@
                             <outlet property="delegate" destination="LZZ-Nv-f53" id="6Oe-F6-maj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Xc6-3n-JM1"/>
+                    <navigationItem key="navigationItem" id="Xc6-3n-JM1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="yv3-bv-yLy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="additionalDescriptionLabel" destination="rgv-kD-ZYJ" id="2WY-VI-EJt"/>
                         <outlet property="briefDescriptionLabel" destination="BEd-xu-wzt" id="nGp-ye-ecG"/>
@@ -396,7 +409,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="kbx-QP-dxh"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="kbx-QP-dxh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBM-Lf-84d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -515,6 +528,62 @@
             <point key="canvasLocation" x="-172" y="184"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="OnlinerMotoFilterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoFilterViewController.h"/>
+        </class>
+        <class className="OnlinerMotoPhotoCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoPhotoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="photoImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="OnlinerMotoTaggedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoTaggedViewController.h"/>
+        </class>
+        <class className="OnlinerMotoVehicleDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehicleDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="additionalDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="briefDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mileageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photosCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yearLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OnlinerMotoVehicleItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehicleItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="briefDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OnlinerMotoVehiclesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehiclesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextPageButtonAction:"/>
+                <relationship kind="action" name="previousPageButtonAction:"/>
+                <relationship kind="outlet" name="nextPageButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="previousPageButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

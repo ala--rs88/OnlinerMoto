@@ -102,7 +102,7 @@
     cell.nameLabel.text = item.name;
     cell.briefDescriptionLabel.text = item.briefDescription;
     cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
-    cell.priceLabel.text = [NSString stringWithFormat:@"%u$", item.price];
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%u", item.price];
     
     return cell;
 }
@@ -195,6 +195,8 @@
             [self endLoadPageWithIndex:pageIndex
                     loadedVehicleItems:loadedVehicleItems
                 totalVehicleItemsCount:self.vehicleItemsProvider.totalItemsCount];
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
     });
 }
@@ -227,8 +229,6 @@
         [self setPreviousPageButtonEnabled:self.previousPageButton.isEnabled
                   andNextPageButtonEnabled:NO];
     }
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end

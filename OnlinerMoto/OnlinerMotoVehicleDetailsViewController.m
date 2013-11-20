@@ -10,6 +10,7 @@
 #import "VehicleItem.h"
 #import "VehicleItemDetails.h"
 #import "VehicleItemsProviderProtocol.h"
+#import "OnlinerMotoPhotoCell.h"
 
 @interface OnlinerMotoVehicleDetailsViewController()
 {
@@ -25,7 +26,15 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.nameLabel.text = self.vehicleItem.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%u$", self.vehicleItem.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"$%u", self.vehicleItem.price];
+    self.yearLabel.text =[NSString stringWithFormat:@"%u", self.vehicleItem.year];
+    self.mileageLabel.text =[NSString stringWithFormat:@"%u km", self.vehicleItem.mileage];
+    self.briefDescriptionLabel.text = self.vehicleItem.briefDescription;
+    self.urlLabel.text = self.vehicleItem.detailsUrl;
+    
+    [self.photosCollectionView setBackgroundColor:[UIColor whiteColor]];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // todo: is this section synchronized???
@@ -34,6 +43,8 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self showVehicleItemDetails:_vehicleItemDetails];
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
     });
 }
@@ -46,14 +57,9 @@
 
 #pragma mark - UICollectionView Datasource
 
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
-{
-    return 1;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section
 {
-    if (_vehicleItemDetails == nil
+   if (_vehicleItemDetails == nil
         || _vehicleItemDetails.allPhotos == nil)
     {
         return 0;
@@ -64,8 +70,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    OnlinerMotoPhotoCell *cell = (OnlinerMotoPhotoCell *)[cv dequeueReusableCellWithReuseIdentifier:@"OnlinerMotoPhotoCell" forIndexPath:indexPath];
+    
+    cell.photoImage.image = [UIImage imageWithData:_vehicleItemDetails.allPhotos[indexPath.row]];
+
+    
     return cell;
 }
 
@@ -78,6 +87,8 @@
     self.additionalDescriptionLabel.text = itemDetails.additionalDescription;
     self.additionalDescriptionLabel.numberOfLines = 0;
     [self.additionalDescriptionLabel sizeToFit];
+    
+    
     
     [self.photosCollectionView reloadData];
   //  self.photosCollectionView.dataSource = itemDetails.allPhotos;

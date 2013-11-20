@@ -10,6 +10,6 @@
 
 @interface OnlinerMotoPhotoCell : UICollectionViewCell
 
-
+@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
 
 @end
