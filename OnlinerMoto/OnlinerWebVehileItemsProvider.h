@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "VehicleItemsProviderProtocol.h"
+@class VehicleItem;
+@class VehicleItemDetails;
+@class VehicleItemFilter;
 
 @interface OnlinerWebVehileItemsProvider : NSObject <VehicleItemsProviderProtocol>
 

@@ -12,13 +12,16 @@
 
 @interface VehicleItemData : NSManagedObject
 
+// todo: IK remove vehicleId
 @property (nonatomic, retain) NSNumber *vehicleId;
-@property (nonatomic, retain) NSString *briefDescription;
-@property (nonatomic, assign) NSUInteger mileage;
-@property (nonatomic, assign) NSUInteger year;
+
+@property (nonatomic, retain) NSString *detailsUrl;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) NSUInteger price;
-@property (nonatomic, retain) NSString *detailsUrl;
+@property (nonatomic, retain) NSString *briefDescription;
 @property (nonatomic, retain) NSData *mainPhoto;
+
+@property (nonatomic, assign) NSUInteger mileage;
+@property (nonatomic, assign) NSUInteger year;
 
 @end

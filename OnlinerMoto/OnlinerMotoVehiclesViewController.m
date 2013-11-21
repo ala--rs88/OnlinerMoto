@@ -7,8 +7,6 @@
 //
 
 #import "OnlinerMotoVehiclesViewController.h"
-//#import "MockInMemoryVehicleItemsProvider.h"
-#import "AVWebVehicleItemsProvider.h"
 #import "OnlinerMotoVehicleItemCell.h"
 #import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"

@@ -11,6 +11,7 @@
 		A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7218299D9C00AFF004 /* HTMLNode.m */; };
 		A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7418299D9C00AFF004 /* HTMLParser.m */; };
 		A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A99A0B7718299DE400AFF004 /* libxml2.dylib */; };
+		A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */; };
 		A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */; };
 		A9FAC48D182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
 		A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
@@ -37,7 +38,6 @@
 		A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51218257134008F3089 /* VehicleItemDetails.m */; };
 		A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5161825C59D008F3089 /* VehicleItem.m */; };
 		A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */; };
-		A9FAC5211825C9BE008F3089 /* AVWebVehicleItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5201825C9BE008F3089 /* AVWebVehicleItemsProvider.m */; };
 		A9FAC5241825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */; };
 		A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5271825E37E008F3089 /* OnlinerMotoVehicleItemCell.m */; };
 		A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */; };
@@ -61,6 +61,9 @@
 		A99A0B7318299D9C00AFF004 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
 		A99A0B7418299D9C00AFF004 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 		A99A0B7718299DE400AFF004 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemsRepositoryProtocol.h; sourceTree = "<group>"; };
+		A9A3DDC3183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleItemsRepository.h; sourceTree = "<group>"; };
+		A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleItemsRepository.m; sourceTree = "<group>"; };
 		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
 		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC489182537ED008F3089 /* OnlinerMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,8 +103,6 @@
 		A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleItemsProviderProtocol.h; sourceTree = "<group>"; };
 		A9FAC51A1825C8A0008F3089 /* VehicleItemFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemFilter.h; sourceTree = "<group>"; };
 		A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemFilter.m; sourceTree = "<group>"; };
-		A9FAC51F1825C9BE008F3089 /* AVWebVehicleItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVWebVehicleItemsProvider.h; sourceTree = "<group>"; };
-		A9FAC5201825C9BE008F3089 /* AVWebVehicleItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVWebVehicleItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC5221825CF78008F3089 /* MockInMemoryVehicleItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockInMemoryVehicleItemsProvider.h; sourceTree = "<group>"; };
 		A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockInMemoryVehicleItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC5261825E37E008F3089 /* OnlinerMotoVehicleItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleItemCell.h; sourceTree = "<group>"; };
@@ -148,6 +149,15 @@
 			name = HTMLParser;
 			sourceTree = "<group>";
 		};
+		A9A3DDC6183EB9BB006ED4CB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A9A3DDC3183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.h */,
+				A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */,
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
 		A9FAC480182537ED008F3089 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		A9FAC494182537ED008F3089 /* OnlinerMoto */ = {
 			isa = PBXGroup;
 			children = (
+				A9A3DDC6183EB9BB006ED4CB /* Repositories */,
 				A99A0B7018299D7600AFF004 /* HTMLParser */,
 				A9FAC5251825E183008F3089 /* ViewModels */,
 				A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */,
@@ -274,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */,
+				A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -281,8 +293,6 @@
 		A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAC51F1825C9BE008F3089 /* AVWebVehicleItemsProvider.h */,
-				A9FAC5201825C9BE008F3089 /* AVWebVehicleItemsProvider.m */,
 				A9FAC5221825CF78008F3089 /* MockInMemoryVehicleItemsProvider.h */,
 				A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */,
 				A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */,
@@ -423,7 +433,6 @@
 				A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */,
 				A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */,
 				A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */,
-				A9FAC5211825C9BE008F3089 /* AVWebVehicleItemsProvider.m in Sources */,
 				A9FAC5241825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m in Sources */,
 				A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */,
 				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
@@ -431,6 +440,7 @@
 				A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */,
 				A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */,
 				A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */,
+				A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
