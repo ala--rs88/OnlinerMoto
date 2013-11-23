@@ -9,6 +9,7 @@
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "VehicleItem.h"
 #import "VehicleItemDetails.h"
+#import "VehicleItemsRepositoryProtocol.h"
 #import "VehicleItemsProviderProtocol.h"
 #import "OnlinerMotoPhotoCell.h"
 
@@ -55,6 +56,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addVehicleItemToTagged:(id)sender
+{
+    // todo: IK check whether item is already added; -- or hide ADD button instead
+    [self.vehicleItemsRepository addVehicleItem:self.vehicleItem];
+}
+
 #pragma mark - UICollectionView Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section
@@ -87,8 +94,7 @@
     self.additionalDescriptionLabel.text = itemDetails.additionalDescription;
     self.additionalDescriptionLabel.numberOfLines = 0;
     [self.additionalDescriptionLabel sizeToFit];
-    
-    
+       
     
     [self.photosCollectionView reloadData];
   //  self.photosCollectionView.dataSource = itemDetails.allPhotos;

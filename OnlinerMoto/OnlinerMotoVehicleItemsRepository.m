@@ -39,10 +39,16 @@
     // todo: IK consider aoutomapping
     newEntry.detailsUrl = vehicleItem.detailsUrl;
     newEntry.name = vehicleItem.name;
-    newEntry.price = vehicleItem.price;
+    
+    newEntry.price = [NSNumber numberWithUnsignedInteger:vehicleItem.price];
+    
     newEntry.mainPhoto = vehicleItem.mainPhoto;
-    newEntry.mileage = vehicleItem.mileage;
-    newEntry.year = vehicleItem.year;
+    newEntry.briefDescription = vehicleItem.briefDescription;
+    
+    // todo: IK Investigate: mileage & year is not being saved!
+    //newEntry.mileage = [NSNumber numberWithUnsignedInteger:vehicleItem.mileage];
+    //newEntry.year = [NSNumber numberWithUnsignedInteger:vehicleItem.year];
+    
 
     NSError *error;
     if (![self.managedObjectContext save:&error])
@@ -131,12 +137,13 @@
         // todo: consider automapping
         vehicleItem.detailsUrl = vehicleItemData.detailsUrl;
         vehicleItem.name = vehicleItemData.name;
-        vehicleItem.price = vehicleItemData.price;
+        vehicleItem.price = [vehicleItemData.price integerValue];
         vehicleItem.mainPhoto = vehicleItemData.mainPhoto;
-        vehicleItem.mileage = vehicleItemData.mileage;
-        vehicleItem.year = vehicleItemData.year;
+        vehicleItem.mileage = [vehicleItemData.mileage integerValue];
+        vehicleItem.year = [vehicleItemData.year integerValue];
+        vehicleItem.briefDescription = vehicleItemData.briefDescription;
         
-        [vehicleItems addObject:vehicleItem];
+        [vehicleItems insertObject:vehicleItem atIndex:0];
     }
     
     return vehicleItems;

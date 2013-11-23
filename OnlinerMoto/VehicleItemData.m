@@ -1,8 +1,8 @@
 //
-//  VehicleItem.m
+//  VehicleItemData.m
 //  OnlinerMoto
 //
-//  Created by Igor Karpov on 2.11.2013.
+//  Created by Igor Karpov on 23.11.2013.
 //  Copyright (c) 2013 KarpovIV. All rights reserved.
 //
 
@@ -11,13 +11,13 @@
 
 @implementation VehicleItemData
 
-@dynamic vehicleId;
 @dynamic briefDescription;
-@dynamic mileage;
-@dynamic year;
-@dynamic name;
-@dynamic price;
 @dynamic detailsUrl;
 @dynamic mainPhoto;
+@dynamic mileage;
+@dynamic name;
+@dynamic price;
+@dynamic vehicleId;
+@dynamic year;
 
 @end

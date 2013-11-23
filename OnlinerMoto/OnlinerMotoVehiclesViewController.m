@@ -8,10 +8,12 @@
 
 #import "OnlinerMotoVehiclesViewController.h"
 #import "OnlinerMotoVehicleItemCell.h"
+#import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"
 #import "VehicleItemFilter.h"
 #import "OnlinerMotoVehicleDetailsViewController.h"
+#import "OnlinerMotoAppDelegate.h"
 
 @interface OnlinerMotoVehiclesViewController ()
 {
@@ -27,6 +29,7 @@
 
 @implementation OnlinerMotoVehiclesViewController
 
+@synthesize vehicleItemsRepository = _vehicleItemsRepository;
 @synthesize vehicleItemsProvider = _vehicleItemsProvider;
 
 - (void)awakeFromNib
@@ -76,11 +79,6 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // todo: consider multiple firing
@@ -106,18 +104,19 @@
 }
 
 // todo: Is this method mandatory?
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
-}
+};*/
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"VehicleItemDetailsSegue"])
+    if ([[segue identifier] isEqualToString:@"VehicleItemDetailsFromVehiclesSegue"])
     {
         OnlinerMotoVehicleDetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.vehicleItemsRepository = self.vehicleItemsRepository;
         detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
         detailsViewController.VehicleItem = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
     }
@@ -136,6 +135,21 @@
 {
     // todo: add validation
     [self beginLoadPageWithIndex:(_currentLoadedPageIndex + 1)];
+}
+
+#pragma mark -- Vehicle Items Repository
+
+- (id<VehicleItemsRepositoryProtocol>)vehicleItemsRepository
+{
+    if (_vehicleItemsRepository != nil)
+    {
+        return _vehicleItemsRepository;
+    }
+    
+    _vehicleItemsRepository = [[OnlinerMotoVehicleItemsRepository alloc]
+                               initWithObjectContext:[(OnlinerMotoAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext]];
+    
+    return _vehicleItemsRepository;
 }
 
 #pragma mark - Data providers

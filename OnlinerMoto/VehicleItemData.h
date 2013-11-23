@@ -1,8 +1,8 @@
 //
-//  VehicleItem.h
+//  VehicleItemData.h
 //  OnlinerMoto
 //
-//  Created by Igor Karpov on 2.11.2013.
+//  Created by Igor Karpov on 23.11.2013.
 //  Copyright (c) 2013 KarpovIV. All rights reserved.
 //
 
@@ -12,16 +12,13 @@
 
 @interface VehicleItemData : NSManagedObject
 
-// todo: IK remove vehicleId
-@property (nonatomic, retain) NSNumber *vehicleId;
-
-@property (nonatomic, retain) NSString *detailsUrl;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, assign) NSUInteger price;
-@property (nonatomic, retain) NSString *briefDescription;
-@property (nonatomic, retain) NSData *mainPhoto;
-
-@property (nonatomic, assign) NSUInteger mileage;
-@property (nonatomic, assign) NSUInteger year;
+@property (nonatomic, retain) NSString * briefDescription;
+@property (nonatomic, retain) NSString * detailsUrl;
+@property (nonatomic, retain) NSData * mainPhoto;
+@property (nonatomic, retain) NSNumber * mileage;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * price;
+@property (nonatomic, retain) NSNumber * vehicleId;
+@property (nonatomic, retain) NSNumber * year;
 
 @end

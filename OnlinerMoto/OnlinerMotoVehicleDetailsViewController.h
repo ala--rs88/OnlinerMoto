@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @class VehicleItem;
+@protocol VehicleItemsRepositoryProtocol;
 @protocol VehicleItemsProviderProtocol;
 
 @interface OnlinerMotoVehicleDetailsViewController : UITableViewController <UICollectionViewDataSource>
 
+@property (strong, nonatomic) id<VehicleItemsRepositoryProtocol> vehicleItemsRepository;
 @property (strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
 @property (strong, nonatomic) VehicleItem *vehicleItem;
@@ -28,5 +30,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *photosCollectionView;
 
 @property (weak, nonatomic) IBOutlet UILabel *additionalDescriptionLabel;
+
+- (IBAction)addVehicleItemToTagged:(id)sender;
 
 @end
