@@ -99,17 +99,15 @@
     cell.briefDescriptionLabel.text = item.briefDescription;
     cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
     cell.priceLabel.text = [NSString stringWithFormat:@"$%u", item.price];
+    cell.yearLabel.text = [NSString stringWithFormat:@"%u", item.year];
     
     return cell;
 }
 
-// todo: Is this method mandatory?
-/*- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return NO;
-};*/
-
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

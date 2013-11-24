@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *briefDescriptionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *yearLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *mainImageView;
 
 @end

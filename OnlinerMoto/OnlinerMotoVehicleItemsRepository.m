@@ -80,14 +80,14 @@
     if ([fetchedRecords count] != 1)
     {
         NSLog(@"detailsUrl is not unique in storage.");
-        abort();
+ //       abort();
     }
     
     [self.managedObjectContext deleteObject:fetchedRecords[0]];
     if (![self.managedObjectContext save:&error])
     {
         NSLog(@"Deleting VehicleItemData failed: %@", [error localizedDescription]);
-        abort();
+      //  abort();
     }
 }
 

@@ -52,9 +52,9 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2WM-t7-CE4" userLabel="Label - Description">
-                                                    <rect key="frame" x="93" y="32" width="207" height="57"/>
+                                                    <rect key="frame" x="93" y="32" width="150" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -65,6 +65,13 @@
                                                     <color key="textColor" red="0.82067340353260865" green="0.58990335972807806" blue="0.060267186760234549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2yw-nq-BYW">
+                                                    <rect key="frame" x="244" y="68" width="56" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -73,6 +80,7 @@
                                             <outlet property="mainImageView" destination="nYx-L8-4Et" id="LGv-ET-HPa"/>
                                             <outlet property="nameLabel" destination="bcg-i1-ONs" id="Zfv-pb-8qX"/>
                                             <outlet property="priceLabel" destination="YMt-Ee-F9X" id="utg-Be-vnR"/>
+                                            <outlet property="yearLabel" destination="2yw-nq-BYW" id="npA-lB-5J4"/>
                                             <segue destination="LZZ-Nv-f53" kind="modal" identifier="VehicleItemDetailsFromVehiclesSegue" modalTransitionStyle="flipHorizontal" id="iMD-nr-MMw"/>
                                         </connections>
                                     </tableViewCell>
@@ -139,9 +147,9 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vPB-UG-Pyu" userLabel="Label - Description">
-                                                    <rect key="frame" x="93" y="32" width="207" height="57"/>
+                                                    <rect key="frame" x="93" y="32" width="150" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -152,6 +160,13 @@
                                                     <color key="textColor" red="0.82067340349999995" green="0.58990335969999996" blue="0.060267186760000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wwy-D2-c8C">
+                                                    <rect key="frame" x="244" y="68" width="56" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -160,6 +175,7 @@
                                             <outlet property="mainImageView" destination="130-Yb-BJs" id="eXx-3e-4Zf"/>
                                             <outlet property="nameLabel" destination="qo2-zu-eWy" id="o9l-rM-VMq"/>
                                             <outlet property="priceLabel" destination="Cpp-Cr-9xx" id="UEY-P1-ob3"/>
+                                            <outlet property="yearLabel" destination="Wwy-D2-c8C" id="f31-Op-JYp"/>
                                             <segue destination="LZZ-Nv-f53" kind="modal" identifier="VehicleItemDetailsFromTaggedSegue" modalTransitionStyle="flipHorizontal" id="CDo-Qy-Fes"/>
                                         </connections>
                                     </tableViewCell>
@@ -629,6 +645,7 @@
                 <relationship kind="outlet" name="mainImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yearLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="OnlinerMotoVehiclesViewController" superclassName="UIViewController">
@@ -657,6 +674,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iMD-nr-MMw"/>
+        <segue reference="CDo-Qy-Fes"/>
     </inferredMetricsTieBreakers>
 </document>

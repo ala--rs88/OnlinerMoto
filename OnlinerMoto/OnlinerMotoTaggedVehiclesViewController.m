@@ -86,8 +86,19 @@
     cell.briefDescriptionLabel.text = item.briefDescription;
     cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
     cell.priceLabel.text = [NSString stringWithFormat:@"$%u", item.price];
+    cell.yearLabel.text = [NSString stringWithFormat:@"%u", item.year];
     
     return cell;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.vehicleItemsRepository removeVehicleItemByDetailsUrl:((VehicleItem *)_vehicleItemsToBeDisplayed[indexPath.row]).detailsUrl];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
