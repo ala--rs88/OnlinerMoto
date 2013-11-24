@@ -8,6 +8,7 @@
 
 #import "OnlinerMotoVehiclesViewController.h"
 #import "OnlinerMotoVehicleItemCell.h"
+#import "OnlinerMotoLoadMoreCell.h"
 #import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"
 #import "VehicleItem.h"
@@ -18,34 +19,29 @@
 @interface OnlinerMotoVehiclesViewController ()
 {
     NSUInteger _pageSize;
-    NSArray *_vehicleItemsToBeDisplayed;
+    NSMutableArray *_vehicleItemsToBeDisplayed;
     
     NSInteger _currentLoadedPageIndex;
     
-    BOOL _isPreviousPageButtonEnabledOldValue;
-    BOOL _isNextPageButtonEnabledOldValue;
+   // BOOL _isPreviousPageButtonEnabledOldValue;
+   // BOOL _isNextPageButtonEnabledOldValue;
+    BOOL _isLoadedPageLast;
 }
+
+@property (nonatomic) NSUInteger indexForLoadMoreRow;
+
 @end
 
 @implementation OnlinerMotoVehiclesViewController
 
 @synthesize vehicleItemsRepository = _vehicleItemsRepository;
 @synthesize vehicleItemsProvider = _vehicleItemsProvider;
+@synthesize indexForLoadMoreRow;
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
 }
-
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {   
-    }
-    return self;
-}*/
 
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
@@ -53,10 +49,12 @@
     
     if (self)
     {
-        _vehicleItemsToBeDisplayed = [[NSArray alloc] init];
+        _vehicleItemsToBeDisplayed = [[NSMutableArray alloc] init];
         
         // todo: use const here
         _pageSize = 30;
+        _currentLoadedPageIndex = -1;
+        _isLoadedPageLast = NO;
     }
     
     return self;
@@ -65,10 +63,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // todo: IS View loaded multiple times?
-    _currentLoadedPageIndex = -1;
-    [self beginLoadPageWithIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,25 +77,55 @@
 {
     // todo: consider multiple firing
     NSLog(@"numberOfRowsInSection fired");
-    return [_vehicleItemsToBeDisplayed count];
+    
+    NSUInteger rowsCount = _isLoadedPageLast ? [_vehicleItemsToBeDisplayed count] : [_vehicleItemsToBeDisplayed count] + 1;
+    
+    return rowsCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // todo: IK consider hardcoding
-    static NSString *CellIdentifier = @"OnlinerMotoVehicleItemCell";
+    if (indexPath.row == self.indexForLoadMoreRow)
+    {      
+        OnlinerMotoLoadMoreCell *cell = (OnlinerMotoLoadMoreCell *)[tableView dequeueReusableCellWithIdentifier:@"OnlinerMotoLoadMoreCell"];
+        
+        if (_currentLoadedPageIndex == -1)
+        {
+            [cell setLoadingState];
+            [self beginLoadNextPage];
+        }
+        else
+        {
+            [cell setInitialState];
+        }
+        
+        return cell;
+    }
+    else
+    {
+        OnlinerMotoVehicleItemCell *cell = (OnlinerMotoVehicleItemCell *)[tableView dequeueReusableCellWithIdentifier:@"OnlinerMotoVehicleItemCell"];
     
-    OnlinerMotoVehicleItemCell *cell = (OnlinerMotoVehicleItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        VehicleItem *item = _vehicleItemsToBeDisplayed[indexPath.row];
     
-    VehicleItem *item = _vehicleItemsToBeDisplayed[indexPath.row];
+        cell.nameLabel.text = item.name;
+        cell.briefDescriptionLabel.text = item.briefDescription;
+        cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
+        cell.priceLabel.text = [NSString stringWithFormat:@"$%u", item.price];
+        cell.yearLabel.text = [NSString stringWithFormat:@"%u", item.year];
     
-    cell.nameLabel.text = item.name;
-    cell.briefDescriptionLabel.text = item.briefDescription;
-    cell.mainImageView.image = [UIImage imageWithData:item.mainPhoto];
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%u", item.price];
-    cell.yearLabel.text = [NSString stringWithFormat:@"%u", item.year];
-    
-    return cell;
+        return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.indexForLoadMoreRow)
+    {
+        OnlinerMotoLoadMoreCell *cell = (OnlinerMotoLoadMoreCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
+        [cell setLoadingState];
+        [self beginLoadNextPage];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -122,21 +146,6 @@
         detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
         detailsViewController.VehicleItem = vehicleItemToPresent;
     }
-}
-
-
-#pragma mark - Navigation bar
-
-- (IBAction)previousPageButtonAction:(id)sender
-{
-    // todo: add validation
-    [self beginLoadPageWithIndex:(_currentLoadedPageIndex - 1)];
-}
-
-- (IBAction)nextPageButtonAction:(id)sender
-{
-    // todo: add validation
-    [self beginLoadPageWithIndex:(_currentLoadedPageIndex + 1)];
 }
 
 #pragma mark -- Vehicle Items Repository
@@ -170,39 +179,26 @@
 
 #pragma mark - Private methods
 
+- (NSUInteger)indexForLoadMoreRow
+{
+    return _pageSize * (_currentLoadedPageIndex + 1);
+}
+
 - (BOOL)checkIsTaggingAvailableForVehicleItem:(VehicleItem *)vehicleItem
 {
     return ![self.vehicleItemsRepository isItemAlreadyPresentByDetailsUrl:vehicleItem.detailsUrl];
 }
 
-- (void)setPreviousPageButtonEnabled:(bool)previousButtonEnabled
-            andNextPageButtonEnabled:(bool)nextButtonEnabled
+- (void)beginLoadNextPage
 {
-    _isPreviousPageButtonEnabledOldValue = self.previousPageButton.isEnabled;
-    _isNextPageButtonEnabledOldValue = self.nextPageButton.isEnabled;
-    
-    // todo: try to hide instead of disable
-    [self.previousPageButton setEnabled:previousButtonEnabled];
-    [self.nextPageButton setEnabled:nextButtonEnabled];
-}
-
-- (void)undoNavigationButtonsAvailabilityChenges
-{
-    [self.previousPageButton setEnabled:_isPreviousPageButtonEnabledOldValue];
-    [self.nextPageButton setEnabled:_isNextPageButtonEnabledOldValue];
-}
-
-- (void)beginLoadPageWithIndex:(NSUInteger)pageIndex
-{
-    [self setPreviousPageButtonEnabled:NO
-              andNextPageButtonEnabled:NO];
+    NSUInteger pageToLoadIndex = _currentLoadedPageIndex + 1;
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // todo: is this section synchronized???
         
-        NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageIndex * _pageSize)
+        NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageToLoadIndex * _pageSize)
                                                                              count:_pageSize];
         
 
@@ -211,7 +207,7 @@
         // todo: consider totalCount changing
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self endLoadPageWithIndex:pageIndex
+            [self endLoadPageWithIndex:pageToLoadIndex
                     loadedVehicleItems:loadedVehicleItems
                 totalVehicleItemsCount:self.vehicleItemsProvider.totalItemsCount];
             
@@ -223,31 +219,22 @@
 - (void)endLoadPageWithIndex:(NSUInteger)pageIndex
           loadedVehicleItems:(NSArray *)loadedVehicleItems
       totalVehicleItemsCount:(NSUInteger)totalVehicleItemsCount
-{
+{    
     if (loadedVehicleItems)
     {
-        _vehicleItemsToBeDisplayed = loadedVehicleItems;
-        
-        [self.tableView reloadData];
+        [_vehicleItemsToBeDisplayed addObjectsFromArray:loadedVehicleItems];
         
         _currentLoadedPageIndex = pageIndex;
     }
     
-    // todo: Review condition
-    if (loadedVehicleItems && ([loadedVehicleItems count] != 0 || pageIndex == 0))
+    if (!loadedVehicleItems
+        || [loadedVehicleItems count] == 0
+        || totalVehicleItemsCount <= [_vehicleItemsToBeDisplayed count])
     {
-        [self.navigationItem setTitle:[NSString stringWithFormat:@"Page %d of %d", (pageIndex + 1), (totalVehicleItemsCount / _pageSize + 1)]];
-        
-        [self setPreviousPageButtonEnabled:(pageIndex > 0)
-                  andNextPageButtonEnabled:((pageIndex + 1) * _pageSize < totalVehicleItemsCount)];
+        _isLoadedPageLast = YES;
     }
-    else     
-    {
-        [self undoNavigationButtonsAvailabilityChenges];
-        [self.navigationItem setTitle:[NSString stringWithFormat:@"Page %d of %d", _currentLoadedPageIndex, _currentLoadedPageIndex]];
-        [self setPreviousPageButtonEnabled:self.previousPageButton.isEnabled
-                  andNextPageButtonEnabled:NO];
-    }
+    
+    [self.tableView reloadData];
 }
 
 @end

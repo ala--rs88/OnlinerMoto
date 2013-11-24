@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */; };
+		A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9305D24184238A300BA941C /* OnlinerMotoLoadMoreCell.m */; };
 		A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7218299D9C00AFF004 /* HTMLNode.m */; };
 		A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7418299D9C00AFF004 /* HTMLParser.m */; };
 		A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A99A0B7718299DE400AFF004 /* libxml2.dylib */; };
@@ -56,6 +57,8 @@
 /* Begin PBXFileReference section */
 		A92DE0E3183968FD0044ADCA /* OnlinerMotoPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoPhotoCell.h; sourceTree = "<group>"; };
 		A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoPhotoCell.m; sourceTree = "<group>"; };
+		A9305D23184238A300BA941C /* OnlinerMotoLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoLoadMoreCell.h; sourceTree = "<group>"; };
+		A9305D24184238A300BA941C /* OnlinerMotoLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoLoadMoreCell.m; sourceTree = "<group>"; };
 		A99A0B7118299D9C00AFF004 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
 		A99A0B7218299D9C00AFF004 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
 		A99A0B7318299D9C00AFF004 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				A9FAC5271825E37E008F3089 /* OnlinerMotoVehicleItemCell.m */,
 				A92DE0E3183968FD0044ADCA /* OnlinerMotoPhotoCell.h */,
 				A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */,
+				A9305D23184238A300BA941C /* OnlinerMotoLoadMoreCell.h */,
+				A9305D24184238A300BA941C /* OnlinerMotoLoadMoreCell.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */,
 				A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */,
 				A9DCE11018412EB100FFDACE /* VehicleItemData.m in Sources */,
+				A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

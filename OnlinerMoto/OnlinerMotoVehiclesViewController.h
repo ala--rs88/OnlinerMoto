@@ -19,7 +19,4 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previousPageButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextPageButton;
 
-- (IBAction)previousPageButtonAction:(id)sender;
-- (IBAction)nextPageButtonAction:(id)sender;
-
 @end

@@ -59,6 +59,8 @@
         // todo: implement filter processing
         _initialHttpBodyForFilter = @"max-price=150&min-price=150";
     }
+    _initialHttpBodyForFilter = @"min-price=400000";
+    
 }
 
 - (NSUInteger)totalItemsCount
@@ -182,11 +184,9 @@
         return nil;
     }
     
-    bool isLoadingSuccessful = [OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:responseJson];
+    _totalVehicleItemsCount = [OnlinerWebVehileItemsProvider parseJsonObjectForTotalVehicleItemsCount:responseJson];
     
-    _totalVehicleItemsCount = isLoadingSuccessful ? [OnlinerWebVehileItemsProvider parseJsonObjectForTotalVehicleItemsCount:responseJson] : -1;
-    
-    return isLoadingSuccessful ? [OnlinerWebVehileItemsProvider parseJsonObjectForVehicleItems:responseJson] : nil;
+    return _totalVehicleItemsCount > 0 ? [OnlinerWebVehileItemsProvider parseJsonObjectForVehicleItems:responseJson] : [[NSArray alloc] init];
 }
 
 
@@ -197,11 +197,21 @@
 
 + (NSUInteger)parseJsonObjectForTotalVehicleItemsCount:(NSDictionary *)jsonObject
 {
-    return [jsonObject[@"result"][@"counters"][@"realCount"] integerValue];
+    if ([OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
+    {
+        return 0;
+    }
+    
+    return [jsonObject[@"result"][@"counters"][@"realCount"] integerValue];        
 }
-
+    
 + (NSArray *)parseJsonObjectForVehicleItems:(NSDictionary *)jsonObject
-{    
+{
+    if ([OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
+    {
+        return nil;
+    }
+    
     NSString *html = jsonObject[@"result"][@"content"];
     
     NSError *error;
