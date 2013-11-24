@@ -116,9 +116,13 @@
     if ([[segue identifier] isEqualToString:@"VehicleItemDetailsFromVehiclesSegue"])
     {
         OnlinerMotoVehicleDetailsViewController *detailsViewController = [segue destinationViewController];
+        
+        VehicleItem *vehicleItemToPresent = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
+        
+        detailsViewController.isTaggingAvailable = [self checkIsTaggingAvailableForVehicleItem:vehicleItemToPresent];
         detailsViewController.vehicleItemsRepository = self.vehicleItemsRepository;
         detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
-        detailsViewController.VehicleItem = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
+        detailsViewController.VehicleItem = vehicleItemToPresent;
     }
 }
 
@@ -167,6 +171,11 @@
 }
 
 #pragma mark - Private methods
+
+- (BOOL)checkIsTaggingAvailableForVehicleItem:(VehicleItem *)vehicleItem
+{
+    return ![self.vehicleItemsRepository isItemAlreadyPresentByDetailsUrl:vehicleItem.detailsUrl];
+}
 
 - (void)setPreviousPageButtonEnabled:(bool)previousButtonEnabled
             andNextPageButtonEnabled:(bool)nextButtonEnabled

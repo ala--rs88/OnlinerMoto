@@ -95,6 +95,9 @@
     if ([[segue identifier] isEqualToString:@"VehicleItemDetailsFromTaggedSegue"])
     {
         OnlinerMotoVehicleDetailsViewController *detailsViewController = [segue destinationViewController];
+        
+        detailsViewController.isTaggingAvailable = NO;
+        
         detailsViewController.vehicleItemsRepository = self.vehicleItemsRepository;
         detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
         detailsViewController.VehicleItem = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];

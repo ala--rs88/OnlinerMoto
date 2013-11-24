@@ -17,6 +17,7 @@
 @property (strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
 @property (strong, nonatomic) VehicleItem *vehicleItem;
+@property (nonatomic) BOOL isTaggingAvailable;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
@@ -30,7 +31,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *photosCollectionView;
 
 @property (weak, nonatomic) IBOutlet UILabel *additionalDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addVehicleItemToTaggedButton;
 
 - (IBAction)addVehicleItemToTagged:(id)sender;
+- (IBAction)hideDetailsView:(id)sender;
 
 @end

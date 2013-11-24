@@ -35,6 +35,8 @@
     
     [self.photosCollectionView setBackgroundColor:[UIColor whiteColor]];
     
+    [self.addVehicleItemToTaggedButton setEnabled:self.isTaggingAvailable];
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -60,6 +62,25 @@
 {
     // todo: IK check whether item is already added; -- or hide ADD button instead
     [self.vehicleItemsRepository addVehicleItem:self.vehicleItem];
+    [self.addVehicleItemToTaggedButton setEnabled:NO];
+    
+    [OnlinerMotoVehicleDetailsViewController showMessage:@"Item marked as tagged"];
+    
+}
+
++ (void)showMessage:(NSString *)message
+{
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                         message:message
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (IBAction)hideDetailsView:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UICollectionView Datasource

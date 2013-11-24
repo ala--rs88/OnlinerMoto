@@ -103,7 +103,7 @@
     
     NSError *error;
     NSUInteger count = [self.managedObjectContext countForFetchRequest:fetchRequest error:&error];
-    if(count == NSNotFound)
+    if(count == 0)
     {
         return NO;
     }

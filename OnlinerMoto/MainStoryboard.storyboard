@@ -9,16 +9,34 @@
             <objects>
                 <viewController id="jxT-1b-zZa" customClass="OnlinerMotoVehiclesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4sb-mu-KKN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="WLj-Lz-ujF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="blackOpaque" id="K0Y-3r-Nhj">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem id="wBd-hf-FvI">
+                                            <barButtonItem key="leftBarButtonItem" enabled="NO" title="&lt;" id="RYE-wg-VMh">
+                                                <connections>
+                                                    <action selector="previousPageButtonAction:" destination="jxT-1b-zZa" id="naV-Vu-aEH"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem key="rightBarButtonItem" enabled="NO" title=">" id="sEr-7G-BK5">
+                                                <connections>
+                                                    <action selector="nextPageButtonAction:" destination="jxT-1b-zZa" id="yds-NO-5QV"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OnlinerMotoVehicleItemCell" rowHeight="98" id="kBi-mh-dXY" customClass="OnlinerMotoVehicleItemCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="98"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="97"/>
@@ -91,16 +109,16 @@
             </objects>
             <point key="canvasLocation" x="1158" y="184"/>
         </scene>
-        <!--Onliner Moto Tagged Vehicles View Controller - Item-->
+        <!--Onliner Moto Tagged Vehicles View Controller - Tagged-->
         <scene sceneID="jp4-Fl-dQP">
             <objects>
                 <viewController id="J7P-8Z-5AM" customClass="OnlinerMotoTaggedVehiclesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T6K-zG-uw7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="hFx-T2-AUh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -154,7 +172,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ebJ-Fx-jSh"/>
+                    <tabBarItem key="tabBarItem" title="Tagged" id="ebJ-Fx-jSh"/>
                     <navigationItem key="navigationItem" id="dgb-78-foK"/>
                     <connections>
                         <outlet property="tableView" destination="hFx-T2-AUh" id="vmj-VF-e0X"/>
@@ -169,14 +187,32 @@
             <objects>
                 <tableViewController id="LZZ-Nv-f53" customClass="OnlinerMotoVehicleDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Qm0-3s-rmh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="xUe-ME-me6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Details" id="elA-m8-clD">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="HtY-2y-rKT">
+                                        <connections>
+                                            <action selector="hideDetailsView:" destination="LZZ-Nv-f53" id="nzA-k7-PQq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="bookmarks" id="uee-JG-oqX">
+                                        <connections>
+                                            <action selector="addVehicleItemToTagged:" destination="LZZ-Nv-f53" id="Fqb-XU-Tr1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <sections>
                             <tableViewSection headerTitle="Info" id="QRP-Sa-CbA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="fUV-Ui-CFu" detailTextLabel="Zo1-XP-DhV" style="IBUITableViewCellStyleValue1" id="hwy-cO-uBf">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="80" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -200,17 +236,17 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="4EM-tu-oA3">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="63"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="41" id="4EM-tu-oA3">
+                                        <rect key="frame" x="0.0" y="125" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="62"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a1I-N4-D3t">
-                                                    <rect key="frame" x="10" y="0.0" width="280" height="60"/>
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -219,7 +255,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="t7V-jF-oI4" detailTextLabel="iyS-PZ-RSm" style="IBUITableViewCellStyleValue1" id="UQQ-wo-Unf">
-                                        <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="166" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -244,7 +280,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Oi7-9T-IqU" detailTextLabel="vkm-er-yO2" style="IBUITableViewCellStyleValue1" id="tLg-QI-J1N">
-                                        <rect key="frame" x="0.0" y="198" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -269,7 +305,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AaT-dO-Mq8" detailTextLabel="NEo-um-fl4" style="IBUITableViewCellStyleValue1" id="NiK-D3-VZP">
-                                        <rect key="frame" x="0.0" y="242" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="254" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -294,7 +330,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ah1-K3-qMM" detailTextLabel="PKD-04-UGL" style="IBUITableViewCellStyleValue1" id="Tom-3b-HyE">
-                                        <rect key="frame" x="0.0" y="286" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="298" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -319,7 +355,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Dz9-VT-ncz" detailTextLabel="gwB-hI-unk" style="IBUITableViewCellStyleValue1" id="Isb-vl-ahD">
-                                        <rect key="frame" x="0.0" y="330" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="342" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -348,7 +384,7 @@
                             <tableViewSection headerTitle="Photos" id="M01-of-GFa">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="320" id="XEa-ym-5DL">
-                                        <rect key="frame" x="0.0" y="421" width="320" height="322"/>
+                                        <rect key="frame" x="0.0" y="433" width="320" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="319"/>
@@ -398,7 +434,7 @@
                             <tableViewSection headerTitle="Additional description" id="w3b-H4-ui9">
                                 <cells>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="GcW-Av-ZXW">
-                                        <rect key="frame" x="0.0" y="789" width="320" height="152"/>
+                                        <rect key="frame" x="0.0" y="801" width="320" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="149"/>
@@ -424,6 +460,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addVehicleItemToTaggedButton" destination="uee-JG-oqX" id="VE0-UW-nnT"/>
                         <outlet property="additionalDescriptionLabel" destination="rgv-kD-ZYJ" id="2WY-VI-EJt"/>
                         <outlet property="briefDescriptionLabel" destination="a1I-N4-D3t" id="dIv-iE-WIM"/>
                         <outlet property="locationLabel" destination="PKD-04-UGL" id="YjR-Kn-VNx"/>
@@ -439,44 +476,28 @@
             </objects>
             <point key="canvasLocation" x="1880" y="542"/>
         </scene>
-        <!--Navigation Controller - Vehicles-->
-        <scene sceneID="uFa-8f-DHO">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="u74-zo-DVS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Vehicles" id="ouV-pn-8L5"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kSW-2V-1GS">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="jxT-1b-zZa" kind="relationship" relationship="rootViewController" id="FV2-cP-Cs3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Epz-dm-eVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="688" y="184"/>
-        </scene>
         <!--Onliner Moto Filter View Controller - Filter-->
         <scene sceneID="LAJ-Z6-h3q">
             <objects>
                 <viewController id="AZa-nm-W7k" customClass="OnlinerMotoFilterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYU-ov-08X">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price, $:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7vU-3q-xDF">
-                                <rect key="frame" x="20" y="29" width="90" height="21"/>
+                                <rect key="frame" x="20" y="23" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Year:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ls3-GW-xTc">
-                                <rect key="frame" x="20" y="110" width="90" height="21"/>
+                                <rect key="frame" x="20" y="89" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Engine volume, cc:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C7j-hz-XSP">
-                                <rect key="frame" x="20" y="191" width="144" height="21"/>
+                                <rect key="frame" x="20" y="155" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -559,7 +580,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="AZa-nm-W7k" kind="relationship" relationship="viewControllers" id="91a-eC-bL2"/>
-                        <segue destination="u74-zo-DVS" kind="relationship" relationship="viewControllers" id="1gq-jK-fSD"/>
+                        <segue destination="jxT-1b-zZa" kind="relationship" relationship="viewControllers" id="U6O-TU-ysh"/>
                         <segue destination="J7P-8Z-5AM" kind="relationship" relationship="viewControllers" id="0CR-vr-YjS"/>
                     </connections>
                 </tabBarController>
@@ -588,6 +609,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoVehicleDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addVehicleItemToTagged:"/>
+                <relationship kind="action" name="hideDetailsView:"/>
+                <relationship kind="outlet" name="addVehicleItemToTaggedButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="additionalDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="briefDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
@@ -631,7 +654,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="iMD-nr-MMw"/>
