@@ -266,6 +266,12 @@
                           stringByReplacingOccurrencesOfString:@" " withString:@""] integerValue];
     
     NSString *mainPhotoUrl = [[[tdPhoto findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
+    
+    if (!mainPhotoUrl)
+    {
+        mainPhotoUrl = [[[[tdTxt findChildWithAttribute:@"class" matchingName:@"autoba-table-thumbs" allowPartial:YES] findChildTag:@"a"] findChildTag:@"img"] getAttributeNamed:@"src"];
+    }
+    
     vehicleItem.mainPhoto = [NSData dataWithContentsOfURL: [NSURL URLWithString:mainPhotoUrl]];
     
     return vehicleItem;
