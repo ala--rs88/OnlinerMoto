@@ -15,6 +15,7 @@
 #import "VehicleItemFilter.h"
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "OnlinerMotoAppDelegate.h"
+#import "LoadingIndicatorView.h"
 
 @interface OnlinerMotoVehiclesViewController ()
 {
@@ -22,9 +23,7 @@
     NSMutableArray *_vehicleItemsToBeDisplayed;
     
     NSInteger _currentLoadedPageIndex;
-    
-   // BOOL _isPreviousPageButtonEnabledOldValue;
-   // BOOL _isNextPageButtonEnabledOldValue;
+
     BOOL _isLoadedPageLast;
 }
 
@@ -89,7 +88,7 @@
         if (_currentLoadedPageIndex == -1)
         {
             [cell setLoadingState];
-            [self beginLoadNextPage];
+            [self beginLoadNextPageAndWithFullAnimation:YES];
         }
         else
         {
@@ -121,7 +120,7 @@
         OnlinerMotoLoadMoreCell *cell = (OnlinerMotoLoadMoreCell *)[tableView cellForRowAtIndexPath:indexPath];
         
         [cell setLoadingState];
-        [self beginLoadNextPage];
+        [self beginLoadNextPageAndWithFullAnimation:NO];
     }
 }
 
@@ -164,7 +163,8 @@
 
 - (id<VehicleItemsProviderProtocol>)vehicleItemsProvider
 {
-    if (_vehicleItemsProvider != nil) {
+    if (_vehicleItemsProvider != nil)
+    {
         return _vehicleItemsProvider;
     }
     
@@ -176,6 +176,34 @@
 
 #pragma mark - Private methods
 
+- (void)showLoadingIndicatorsAndWithFullAnimation:(BOOL)fullyAnimated
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    if (fullyAnimated)
+    {
+        [self.tableView setScrollEnabled:NO];
+        [self.view addSubview:[[LoadingIndicatorView alloc] initWithFrame:self.view.bounds]];
+    }
+}
+
+- (void)hideLoadingIndicatorsAndWithFullAnimation:(BOOL)fullyAnimated
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    if (fullyAnimated)
+    {
+        for (UIView *subView in self.view.subviews)
+        {
+            if ([subView isKindOfClass:[LoadingIndicatorView class]])
+            {
+                [subView removeFromSuperview];
+            }
+        }
+        [self.tableView setScrollEnabled:YES];
+    }
+}
+
 - (NSUInteger)indexForLoadMoreRow
 {
     return _pageSize * (_currentLoadedPageIndex + 1);
@@ -186,14 +214,13 @@
     return ![self.vehicleItemsRepository isItemAlreadyPresentByDetailsUrl:vehicleItem.detailsUrl];
 }
 
-- (void)beginLoadNextPage
+- (void)beginLoadNextPageAndWithFullAnimation:(BOOL)fullyAnimated
 {
     NSUInteger pageToLoadIndex = _currentLoadedPageIndex + 1;
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self showLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // todo: is this section synchronized???
         
         NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageToLoadIndex * _pageSize)
                                                                              count:_pageSize];
@@ -202,7 +229,7 @@
         // todo: consider case: request is sent, then filter is updated;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [self hideLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
             
             [self endLoadPageWithIndex:pageToLoadIndex
                     loadedVehicleItems:loadedVehicleItems
