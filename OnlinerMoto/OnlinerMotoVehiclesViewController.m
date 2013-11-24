@@ -74,10 +74,7 @@
 #pragma mark - Table View
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // todo: consider multiple firing
-    NSLog(@"numberOfRowsInSection fired");
-    
+{   
     NSUInteger rowsCount = _isLoadedPageLast ? [_vehicleItemsToBeDisplayed count] : [_vehicleItemsToBeDisplayed count] + 1;
     
     return rowsCount;

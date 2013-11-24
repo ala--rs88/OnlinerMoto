@@ -59,8 +59,6 @@
         // todo: implement filter processing
         _initialHttpBodyForFilter = @"max-price=150&min-price=150";
     }
-    _initialHttpBodyForFilter = @"min-price=400000";
-    
 }
 
 - (NSUInteger)totalItemsCount
@@ -197,7 +195,7 @@
 
 + (NSUInteger)parseJsonObjectForTotalVehicleItemsCount:(NSDictionary *)jsonObject
 {
-    if ([OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
+    if (![OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
     {
         return 0;
     }
@@ -207,7 +205,7 @@
     
 + (NSArray *)parseJsonObjectForVehicleItems:(NSDictionary *)jsonObject
 {
-    if ([OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
+    if (![OnlinerWebVehileItemsProvider parseJsonObjectForSuccess:jsonObject])
     {
         return nil;
     }

@@ -44,10 +44,9 @@
     
     newEntry.mainPhoto = vehicleItem.mainPhoto;
     newEntry.briefDescription = vehicleItem.briefDescription;
-    
-    // todo: IK Investigate: mileage & year is not being saved!
-    //newEntry.mileage = [NSNumber numberWithUnsignedInteger:vehicleItem.mileage];
-    //newEntry.year = [NSNumber numberWithUnsignedInteger:vehicleItem.year];
+
+    newEntry.mileage = [NSNumber numberWithUnsignedInteger:vehicleItem.mileage];
+    newEntry.year = [NSNumber numberWithUnsignedInteger:vehicleItem.year];
     
 
     NSError *error;
