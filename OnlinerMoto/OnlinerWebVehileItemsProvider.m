@@ -122,8 +122,12 @@
     }
     
     VehicleItemDetails *itemDetails = [OnlinerWebVehileItemsProvider parseVehicleItemDetailsBody:[parser body]];
-    itemDetails.vehicleItem = item;
     
+    if (itemDetails)
+    {
+        itemDetails.vehicleItem = item;
+    }
+        
     return itemDetails;
 }
 
@@ -282,6 +286,12 @@
     VehicleItemDetails *itemDetails = [[VehicleItemDetails alloc] init];
     
     HTMLNode *photosAndDescriptionNode = [body findChildOfClass:@"autoba-msglongcont"];
+    
+    if (!photosAndDescriptionNode)
+    {
+        return nil;
+    }
+    
     NSArray *photosAndDescriptionNodeChildren = [photosAndDescriptionNode children];
     
     NSMutableString *description = [[NSMutableString alloc] init];

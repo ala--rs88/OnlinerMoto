@@ -201,14 +201,12 @@
 
         // todo: consider case: request is sent, then filter is updated;
         
-        // todo: consider totalCount changing
-        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
             [self endLoadPageWithIndex:pageToLoadIndex
                     loadedVehicleItems:loadedVehicleItems
                 totalVehicleItemsCount:self.vehicleItemsProvider.totalItemsCount];
-            
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
     });
 }

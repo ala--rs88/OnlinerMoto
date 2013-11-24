@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-loadOnlinerPageWithIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "155"
-         endingLineNumber = "155"
+         startingLineNumber = "159"
+         endingLineNumber = "159"
          landmarkName = "-loadOnlinerPageWithIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +281,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407011201.793515"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "257"
-         endingLineNumber = "257"
+         startingLineNumber = "261"
+         endingLineNumber = "261"
          landmarkName = "+parseMotoRowNode:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -294,11 +294,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407011201.793515"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "248"
-         endingLineNumber = "248"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "+parseMotoRowNode:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +307,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "225"
-         endingLineNumber = "225"
+         startingLineNumber = "229"
+         endingLineNumber = "229"
          landmarkName = "+parseJsonObjectForVehicleItems:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -320,11 +320,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "161"
-         endingLineNumber = "161"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-syncLoadVehicleItemsWithHttpBodyData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -333,11 +333,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "213"
-         endingLineNumber = "213"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "+parseJsonObjectForVehicleItems:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -346,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
          landmarkName = "+parseJsonObjectForVehicleItems:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "187"
-         endingLineNumber = "187"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
          landmarkName = "-syncLoadVehicleItemsWithHttpBodyData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -385,11 +385,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407008700.203273"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-syncLoadVehicleItemsWithHttpBodyData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -424,11 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehicleDetailsViewController.m"
-         timestampString = "406948753.845165"
+         timestampString = "407014508.558834"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-showVehicleItemDetails:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -437,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehicleDetailsViewController.m"
-         timestampString = "406948753.845165"
+         timestampString = "407013510.350818"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
          landmarkName = "-collectionView:numberOfItemsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -450,11 +450,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehicleDetailsViewController.m"
-         timestampString = "406948753.845165"
+         timestampString = "407013510.350818"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
          landmarkName = "-collectionView:cellForItemAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -463,11 +463,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407011201.793515"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "289"
-         endingLineNumber = "289"
+         startingLineNumber = "299"
+         endingLineNumber = "299"
          landmarkName = "+parseVehicleItemDetailsBody:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -489,11 +489,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehicleDetailsViewController.m"
-         timestampString = "406948495.426853"
+         timestampString = "407013510.350818"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
          landmarkName = "-addVehicleItemToTagged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -747,11 +747,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehiclesViewController.m"
-         timestampString = "407008415.426623"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "240"
-         endingLineNumber = "240">
+         startingLineNumber = "238"
+         endingLineNumber = "238">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -771,11 +771,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehiclesViewController.m"
-         timestampString = "407008415.426623"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "-endLoadPageWithIndex:loadedVehicleItems:totalVehicleItemsCount:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -823,12 +823,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerMotoVehiclesViewController.m"
-         timestampString = "407008825.013818"
+         timestampString = "407013364.568787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "220"
-         endingLineNumber = "220"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-endLoadPageWithIndex:loadedVehicleItems:totalVehicleItemsCount:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
+         timestampString = "407013364.568787"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "269"
+         endingLineNumber = "269"
+         landmarkName = "+parseMotoRowNode:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -836,12 +849,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "OnlinerMoto/OnlinerWebVehileItemsProvider.m"
-         timestampString = "407011201.793515"
+         timestampString = "407012798.241571"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "265"
-         endingLineNumber = "265"
-         landmarkName = "+parseMotoRowNode:"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
+         landmarkName = "-getItemDetailsForItem:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "OnlinerMoto/OnlinerMotoVehicleDetailsViewController.m"
+         timestampString = "407014508.558834"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
+         landmarkName = "-showVehicleItemDetails:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

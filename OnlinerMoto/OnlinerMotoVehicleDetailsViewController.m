@@ -45,9 +45,9 @@
         _vehicleItemDetails = [self.vehicleItemsProvider getItemDetailsForItem:self.vehicleItem];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self showVehicleItemDetails:_vehicleItemDetails];
-            
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            [self showVehicleItemDetails:_vehicleItemDetails];
         });
     });
 }
@@ -60,22 +60,19 @@
 
 - (IBAction)addVehicleItemToTagged:(id)sender
 {
-    // todo: IK check whether item is already added; -- or hide ADD button instead
     [self.vehicleItemsRepository addVehicleItem:self.vehicleItem];
     [self.addVehicleItemToTaggedButton setEnabled:NO];
     
     [OnlinerMotoVehicleDetailsViewController showMessage:@"Item marked as tagged"];
-    
 }
 
 + (void)showMessage:(NSString *)message
 {
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:nil
-                                                         message:message
-                                                        delegate:nil
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles:nil];
-    [errorAlert show];
+    [[[UIAlertView alloc] initWithTitle:nil
+                                message:message
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (IBAction)hideDetailsView:(id)sender
@@ -101,15 +98,31 @@
     OnlinerMotoPhotoCell *cell = (OnlinerMotoPhotoCell *)[cv dequeueReusableCellWithReuseIdentifier:@"OnlinerMotoPhotoCell" forIndexPath:indexPath];
     
     cell.photoImage.image = [UIImage imageWithData:_vehicleItemDetails.allPhotos[indexPath.row]];
-
     
     return cell;
+}
+
+#pragma mark -- UIAlertView
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -- Private Mehtods
 
 - (void)showVehicleItemDetails:(VehicleItemDetails *)itemDetails
 {
+    if (!itemDetails)
+    {
+        [[[UIAlertView alloc] initWithTitle:nil
+                                    message:@"Sorry, this item doesn't exist anymore."
+                                   delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];        
+        return;
+    }
+    
     self.locationLabel.text = itemDetails.location;
     [self.locationLabel sizeToFit];
     self.additionalDescriptionLabel.text = itemDetails.additionalDescription;
