@@ -10,6 +10,7 @@
 #import "HTMLParser.h"
 #import "VehicleItem.h"
 #import "VehicleItemDetails.h"
+#import "VehicleItemFilter.h"
 
 @interface OnlinerWebVehileItemsProvider()
 {
@@ -56,8 +57,50 @@
     
     if (filter)
     {
-        // todo: implement filter processing
-        _initialHttpBodyForFilter = @"max-price=150&min-price=150";
+        NSMutableString *httpBody = [[NSMutableString alloc] init];
+        
+        if (filter.minPrice)
+        {
+            [httpBody appendFormat:@"min-price=%u&", filter.minPrice];
+        }
+        
+        if (filter.maxPrice)
+        {
+            [httpBody appendFormat:@"max-price=%u&", filter.maxPrice];
+        }
+        
+        if (filter.minYear)
+        {
+            [httpBody appendFormat:@"min-year=%u&", filter.minYear];
+        }
+        
+        if (filter.maxYear)
+        {
+            [httpBody appendFormat:@"max-year=%u&", filter.maxYear];
+        }
+        
+        if (filter.minEngineVolume)
+        {
+            [httpBody appendFormat:@"min-capacity=%u&", filter.minEngineVolume];
+        }
+        
+        if (filter.maxEngineVolume)
+        {
+            [httpBody appendFormat:@"max-capacity=%u&", filter.maxEngineVolume];
+        }
+        
+        if (![httpBody isEqualToString:@""])
+        {
+            _initialHttpBodyForFilter = [httpBody substringToIndex:[httpBody length] - 1];
+        }
+        else
+        {
+            _initialHttpBodyForFilter = nil;
+        }
+    }
+    else
+    {
+        _initialHttpBodyForFilter = nil;
     }
 }
 

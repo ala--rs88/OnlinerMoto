@@ -7,6 +7,8 @@
 //
 
 #import "OnlinerMotoFilterViewController.h"
+#import "OnlinerMotoAppDelegateProtocol.h"
+#import "VehicleItemFilter.h"
 
 @interface OnlinerMotoFilterViewController ()
 {
@@ -48,7 +50,7 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTapped)];
     
     accessoryView.items = [NSArray arrayWithObjects:space, done, nil];
-    
+       
     NSArray *inputFields = [[NSArray alloc] initWithObjects:self.minPriceTextField,
                                                             self.maxPriceTextField,
                                                             self.minYearTextField,
@@ -56,21 +58,27 @@
                                                             self.minEngineVolumeTextField,
                                                             self.maxEngineVolumeTextField, nil];
     
+    NSMutableArray *inputFieldsKeys = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < [inputFields count]; i++)
+    {
+        UITextField *textField = inputFields[i];
+        
+        textField.inputView = _pickerView;
+        textField.inputAccessoryView = accessoryView;
+        textField.delegate = self;
+        textField.text = @"Any";
+        textField.tag = i;
+        [inputFieldsKeys addObject:[NSNumber numberWithInteger:textField.tag]];
+    }
+    
     NSArray *priceData = [[NSArray alloc] initWithObjects:@"Any", @"$100", @"$200", @"$500", @"$1000", @"$1500", @"$2000", nil];
     NSArray *yearData = [[NSArray alloc] initWithObjects:@"Any", @"1990", @"2000", @"2005", @"2010", @"2015", nil];
     NSArray *engineVolumeData = [[NSArray alloc] initWithObjects:@"Any", @"150 cc", @"250 cc", @"300 cc", @"400 cc", @"600 cc", @"800 cc", @"1000 cc", @"1200 cc", @"1500 cc", nil];
     
     NSArray *inputDatas = [[NSArray alloc] initWithObjects:priceData, priceData, yearData, yearData, engineVolumeData, engineVolumeData, nil];
     
-    _inputFieldData = [[NSDictionary alloc] initWithObjects:inputDatas forKeys:inputFields];
-    
-    for (UITextField *textField in inputFields)
-    {
-        textField.inputView = _pickerView;
-        textField.inputAccessoryView = accessoryView;
-        textField.delegate = self;
-    }
-    
+    _inputFieldData = [[NSDictionary alloc] initWithObjects:inputDatas forKeys:inputFieldsKeys];
     
     [self.minPriceTextField.inputView becomeFirstResponder];
 }
@@ -100,6 +108,35 @@
     return nil;
 }
 
+- (VehicleItemFilter *)getFilter
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+
+	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
+}
+
+- (void)notifyGlobalFilterIsChanged
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    theDelegate.isFilterAlreadyApplied = NO;
+}
+
+- (void)updateGlobalFilter
+{
+    VehicleItemFilter *globalFilter = [self getFilter];
+    
+    globalFilter.minPrice = [self.minPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.minPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
+    globalFilter.maxPrice = [self.maxPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.maxPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
+    
+    globalFilter.minYear= [self.minYearTextField.text isEqualToString:@"Any"] ? 0 :[self.minYearTextField.text integerValue];
+    globalFilter.maxYear= [self.maxYearTextField.text isEqualToString:@"Any"] ? 0 :[self.maxYearTextField.text integerValue];
+    
+    globalFilter.minEngineVolume = [self.minEngineVolumeTextField.text isEqualToString:@"Any"] ? 0 :[[self.minEngineVolumeTextField.text stringByReplacingOccurrencesOfString:@" cc" withString:@""] integerValue];
+    globalFilter.maxEngineVolume = [self.maxEngineVolumeTextField.text isEqualToString:@"Any"] ? 0 :[[self.maxEngineVolumeTextField.text stringByReplacingOccurrencesOfString:@" cc" withString:@""] integerValue];
+    
+    [self notifyGlobalFilterIsChanged];
+}
+
 #pragma mark - UIPickerView DataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -115,7 +152,7 @@
 #pragma mark - UIPickerView Delegate
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 30.0;
+    return 30.0f;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -132,11 +169,15 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    _currentPickerData = _inputFieldData[textField];
+    _currentPickerData = _inputFieldData[[NSNumber numberWithInteger:textField.tag]];
     [_pickerView reloadAllComponents];
     
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self updateGlobalFilter];
+}
 
 @end

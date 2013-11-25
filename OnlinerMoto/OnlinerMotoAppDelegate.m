@@ -7,12 +7,14 @@
 //
 
 #import "OnlinerMotoAppDelegate.h"
+#import "VehicleItemFilter.h"
 
 @implementation OnlinerMotoAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize vehicleItemFilter = _vehicleItemFilter;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -66,13 +68,26 @@
     }
 }
 
+- (VehicleItemFilter *)vehicleItemFilter
+{
+    if (_vehicleItemFilter)
+    {
+        return _vehicleItemFilter;
+    }
+    
+    _vehicleItemFilter = [[VehicleItemFilter alloc] init];
+    
+    return _vehicleItemFilter;
+}
+
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (_managedObjectContext != nil) {
+    if (_managedObjectContext != nil)
+    {
         return _managedObjectContext;
     }
     

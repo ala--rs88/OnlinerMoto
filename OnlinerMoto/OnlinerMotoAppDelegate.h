@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OnlinerMotoAppDelegateProtocol.h"
+@class VehicleItemFilter;
 
-@interface OnlinerMotoAppDelegate : UIResponder <UIApplicationDelegate>
+@interface OnlinerMotoAppDelegate : UIResponder <UIApplicationDelegate, OnlinerMotoAppDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (readonly, nonatomic, strong) VehicleItemFilter *vehicleItemFilter;
+
+@property (nonatomic) BOOL isFilterAlreadyApplied;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

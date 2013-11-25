@@ -15,6 +15,7 @@
 		A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A99A0B7718299DE400AFF004 /* libxml2.dylib */; };
 		A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */; };
 		A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */; };
+		A9DC521C1842E291004CF61B /* OnlinerMotoTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DC521B1842E290004CF61B /* OnlinerMotoTabBarViewController.m */; };
 		A9DCE11018412EB100FFDACE /* VehicleItemData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DCE10F18412EB100FFDACE /* VehicleItemData.m */; };
 		A9FAC48D182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
 		A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
@@ -72,6 +73,9 @@
 		A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleItemsRepository.m; sourceTree = "<group>"; };
 		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
 		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
+		A9DC52191842D686004CF61B /* OnlinerMotoAppDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoAppDelegateProtocol.h; sourceTree = "<group>"; };
+		A9DC521A1842E290004CF61B /* OnlinerMotoTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoTabBarViewController.h; sourceTree = "<group>"; };
+		A9DC521B1842E290004CF61B /* OnlinerMotoTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoTabBarViewController.m; sourceTree = "<group>"; };
 		A9DCE10E18412EB100FFDACE /* VehicleItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemData.h; sourceTree = "<group>"; };
 		A9DCE10F18412EB100FFDACE /* VehicleItemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemData.m; sourceTree = "<group>"; };
 		A9FAC489182537ED008F3089 /* OnlinerMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +265,8 @@
 				A9FAC50B18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m */,
 				A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */,
 				A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */,
+				A9DC521A1842E290004CF61B /* OnlinerMotoTabBarViewController.h */,
+				A9DC521B1842E290004CF61B /* OnlinerMotoTabBarViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			children = (
 				A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */,
 				A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */,
+				A9DC52191842D686004CF61B /* OnlinerMotoAppDelegateProtocol.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -453,6 +460,7 @@
 				A9DCE11018412EB100FFDACE /* VehicleItemData.m in Sources */,
 				A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */,
 				A934730C18428EA600E5F8B3 /* LoadingIndicatorView.m in Sources */,
+				A9DC521C1842E291004CF61B /* OnlinerMotoTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

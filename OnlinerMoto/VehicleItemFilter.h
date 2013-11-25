@@ -10,7 +10,13 @@
 
 @interface VehicleItemFilter : NSObject
 
-@property (nonatomic) NSUInteger *minPrice;
-@property (nonatomic) NSUInteger *maxPrice;
+@property (nonatomic, assign) NSUInteger minPrice;
+@property (nonatomic, assign) NSUInteger maxPrice;
+
+@property (nonatomic, assign) NSUInteger minYear;
+@property (nonatomic, assign) NSUInteger maxYear;
+
+@property (nonatomic, assign) NSUInteger minEngineVolume;
+@property (nonatomic, assign) NSUInteger maxEngineVolume;
 
 @end

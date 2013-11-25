@@ -17,6 +17,8 @@
 #import "OnlinerMotoAppDelegate.h"
 #import "LoadingIndicatorView.h"
 
+#define DEFAULT_PAGE_SIZE 30
+
 @interface OnlinerMotoVehiclesViewController ()
 {
     NSUInteger _pageSize;
@@ -48,12 +50,9 @@
     
     if (self)
     {
-        _vehicleItemsToBeDisplayed = [[NSMutableArray alloc] init];
+        _pageSize = DEFAULT_PAGE_SIZE;
         
-        // todo: use const here
-        _pageSize = 30;
-        _currentLoadedPageIndex = -1;
-        _isLoadedPageLast = NO;
+        [self resetData];
     }
     
     return self;
@@ -68,6 +67,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)checkForFilterChanges
+{
+    if (![self isFilterAlreadyApplied])
+    {
+        [self applyGlobalFilter];
+    }
 }
 
 #pragma mark - Table View
@@ -175,6 +182,42 @@
 }
 
 #pragma mark - Private methods
+
+- (void)applyGlobalFilter
+{
+    [self.vehicleItemsProvider applyFilter:[self getFilter]];
+    [self resetData];
+    
+    
+}
+
+- (void)resetData
+{
+    _vehicleItemsToBeDisplayed = [[NSMutableArray alloc] init];
+    _currentLoadedPageIndex = -1;
+    _isLoadedPageLast = NO;
+    [self markFilterAsAlreadyApplied];
+    [self.tableView reloadData];
+}
+
+- (VehicleItemFilter *)getFilter
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    
+	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
+}
+
+- (BOOL)isFilterAlreadyApplied
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    return theDelegate.isFilterAlreadyApplied;
+}
+
+- (void)markFilterAsAlreadyApplied
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    theDelegate.isFilterAlreadyApplied = YES;
+}
 
 - (void)showLoadingIndicatorsAndWithFullAnimation:(BOOL)fullyAnimated
 {
