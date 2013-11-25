@@ -41,10 +41,12 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        _vehicleItemDetails = [self.vehicleItemsProvider getItemDetailsForItem:self.vehicleItem];
+        VehicleItemDetails *itemDetails = [self.vehicleItemsProvider getItemDetailsForItem:self.vehicleItem];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideLoadingIndicators];
+            
+            _vehicleItemDetails = itemDetails;
             
             [self showVehicleItemDetails:_vehicleItemDetails];
         });

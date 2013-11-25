@@ -44,7 +44,7 @@
     [super awakeFromNib];
 }
 
-- (id)initWithCoder:(NSCoder*)aDecoder
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     
