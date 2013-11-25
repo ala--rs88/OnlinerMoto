@@ -166,7 +166,7 @@
     if (!itemDetails)
     {
         [[[UIAlertView alloc] initWithTitle:nil
-                                    message:@"Sorry, this item doesn't exist anymore."
+                                    message:@"Sorry, connection failed or this item doesn't exist anymore."
                                    delegate:self
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];        

@@ -187,8 +187,6 @@
 {
     [self.vehicleItemsProvider applyFilter:[self getFilter]];
     [self resetData];
-    
-    
 }
 
 - (void)resetData
@@ -268,9 +266,6 @@
         NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageToLoadIndex * _pageSize)
                                                                              count:_pageSize];
         
-
-        // todo: consider case: request is sent, then filter is updated;
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
             
@@ -297,6 +292,15 @@
         || totalVehicleItemsCount <= [_vehicleItemsToBeDisplayed count])
     {
         _isLoadedPageLast = YES;
+    }
+    
+    if ((!loadedVehicleItems || [loadedVehicleItems count] == 0) && _currentLoadedPageIndex <= 0)
+    {
+        [[[UIAlertView alloc] initWithTitle:nil
+                                    message:@"Sorry, no matching items found or connection failed."
+                                   delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
     
     [self.tableView reloadData];

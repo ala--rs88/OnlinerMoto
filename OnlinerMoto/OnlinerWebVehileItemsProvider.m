@@ -127,7 +127,15 @@
     if (onlinerPageIndexToRetrieveFrom != _currentLoadedPageIndex)
     {
         _loadedVehicleItems = [self loadOnlinerPageWithIndex:onlinerPageIndexToRetrieveFrom];
-        _currentLoadedPageIndex = onlinerPageIndexToRetrieveFrom;
+        if (_loadedVehicleItems)
+        {
+            _currentLoadedPageIndex = onlinerPageIndexToRetrieveFrom;
+        }
+        else
+        {
+            [self resetProviderState];
+            return [[NSArray alloc] init];
+        }
     }
     
     
@@ -223,12 +231,17 @@
                                          returningResponse:&response
                                                      error:&error];
     
+    if (error)
+    {
+        NSLog(@"Error: %@", error);
+        return nil;
+    }
+    
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:kNilOptions
                                                                    error:&error];
     if (error)
     {
-        // todo: handle error
         NSLog(@"Error: %@", error);
         return nil;
     }
