@@ -14,6 +14,10 @@
 		A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A0B7418299D9C00AFF004 /* HTMLParser.m */; };
 		A99A0B7818299DE400AFF004 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A99A0B7718299DE400AFF004 /* libxml2.dylib */; };
 		A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */; };
+		A9C1A62A1843D10B005DE8E3 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A6271843D10B005DE8E3 /* search.png */; };
+		A9C1A62B1843D10B005DE8E3 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A6281843D10B005DE8E3 /* star.png */; };
+		A9C1A62C1843D10B005DE8E3 /* text-list.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A6291843D10B005DE8E3 /* text-list.png */; };
+		A9C1A62E1843D849005DE8E3 /* star--gold.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A62D1843D849005DE8E3 /* star--gold.png */; };
 		A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */; };
 		A9DC521C1842E291004CF61B /* OnlinerMotoTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DC521B1842E290004CF61B /* OnlinerMotoTabBarViewController.m */; };
 		A9DCE11018412EB100FFDACE /* VehicleItemData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DCE10F18412EB100FFDACE /* VehicleItemData.m */; };
@@ -71,6 +75,10 @@
 		A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemsRepositoryProtocol.h; sourceTree = "<group>"; };
 		A9A3DDC3183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleItemsRepository.h; sourceTree = "<group>"; };
 		A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleItemsRepository.m; sourceTree = "<group>"; };
+		A9C1A6271843D10B005DE8E3 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		A9C1A6281843D10B005DE8E3 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A9C1A6291843D10B005DE8E3 /* text-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-list.png"; sourceTree = "<group>"; };
+		A9C1A62D1843D849005DE8E3 /* star--gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star--gold.png"; sourceTree = "<group>"; };
 		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
 		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
 		A9DC52191842D686004CF61B /* OnlinerMotoAppDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoAppDelegateProtocol.h; sourceTree = "<group>"; };
@@ -223,6 +231,10 @@
 		A9FAC495182537ED008F3089 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9C1A62D1843D849005DE8E3 /* star--gold.png */,
+				A9C1A6271843D10B005DE8E3 /* search.png */,
+				A9C1A6281843D10B005DE8E3 /* star.png */,
+				A9C1A6291843D10B005DE8E3 /* text-list.png */,
 				A9FAC496182537ED008F3089 /* OnlinerMoto-Info.plist */,
 				A9FAC497182537ED008F3089 /* InfoPlist.strings */,
 				A9FAC49A182537ED008F3089 /* main.m */,
@@ -406,6 +418,10 @@
 				A9FAC4A3182537ED008F3089 /* Default@2x.png in Resources */,
 				A9FAC4A5182537ED008F3089 /* Default-568h@2x.png in Resources */,
 				A9FAC50218254869008F3089 /* MainStoryboard.storyboard in Resources */,
+				A9C1A62A1843D10B005DE8E3 /* search.png in Resources */,
+				A9C1A62B1843D10B005DE8E3 /* star.png in Resources */,
+				A9C1A62C1843D10B005DE8E3 /* text-list.png in Resources */,
+				A9C1A62E1843D849005DE8E3 /* star--gold.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

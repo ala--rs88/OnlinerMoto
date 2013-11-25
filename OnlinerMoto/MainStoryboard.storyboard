@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Onliner Moto Vehicles View Controller - Vehicles-->
+        <!--Onliner Moto Vehicles View Controller-->
         <scene sceneID="t0X-2T-Re8">
             <objects>
                 <viewController id="jxT-1b-zZa" customClass="OnlinerMotoVehiclesViewController" sceneMemberID="viewController">
@@ -101,7 +101,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vehicles" id="y7T-OD-p4w"/>
+                    <tabBarItem key="tabBarItem" title="" image="text-list.png" id="y7T-OD-p4w">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="5Po-hU-oAF">
                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="41q-Eb-DgK">
                             <connections>
@@ -125,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="770" y="184"/>
         </scene>
-        <!--Onliner Moto Tagged Vehicles View Controller - Tagged-->
+        <!--Onliner Moto Tagged Vehicles View Controller-->
         <scene sceneID="jp4-Fl-dQP">
             <objects>
                 <viewController id="J7P-8Z-5AM" customClass="OnlinerMotoTaggedVehiclesViewController" sceneMemberID="viewController">
@@ -196,7 +198,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tagged" id="ebJ-Fx-jSh"/>
+                    <tabBarItem key="tabBarItem" title="" image="star.png" id="ebJ-Fx-jSh">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="dgb-78-foK"/>
                     <connections>
                         <outlet property="tableView" destination="hFx-T2-AUh" id="vmj-VF-e0X"/>
@@ -224,7 +228,8 @@
                                             <action selector="hideDetailsView:" destination="LZZ-Nv-f53" id="nzA-k7-PQq"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="bookmarks" id="uee-JG-oqX">
+                                    <barButtonItem key="rightBarButtonItem" enabled="NO" image="star--gold.png" id="uee-JG-oqX">
+                                        <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                         <connections>
                                             <action selector="addVehicleItemToTagged:" destination="LZZ-Nv-f53" id="Fqb-XU-Tr1"/>
                                         </connections>
@@ -500,7 +505,7 @@
             </objects>
             <point key="canvasLocation" x="1244" y="557"/>
         </scene>
-        <!--Onliner Moto Filter View Controller - Filter-->
+        <!--Onliner Moto Filter View Controller-->
         <scene sceneID="LAJ-Z6-h3q">
             <objects>
                 <viewController id="AZa-nm-W7k" customClass="OnlinerMotoFilterViewController" sceneMemberID="viewController">
@@ -586,7 +591,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Filter" id="ROD-7A-dWJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="search.png" id="ROD-7A-dWJ">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="maxEngineVolumeTextField" destination="cit-yi-L7G" id="chn-Wi-KBI"/>
                         <outlet property="maxPriceTextField" destination="ssg-Uy-i5D" id="nq4-13-bm4"/>
@@ -621,6 +628,12 @@
             <point key="canvasLocation" x="-172" y="184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search.png" width="30" height="30"/>
+        <image name="star--gold.png" width="30" height="30"/>
+        <image name="star.png" width="30" height="30"/>
+        <image name="text-list.png" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="OnlinerMotoFilterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlinerMotoFilterViewController.h"/>
@@ -698,9 +711,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
