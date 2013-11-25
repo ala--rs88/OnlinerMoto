@@ -108,13 +108,6 @@
     return nil;
 }
 
-- (VehicleItemFilter *)getFilter
-{
-    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
-
-	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
-}
-
 - (void)notifyGlobalFilterIsChanged
 {
     id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
@@ -123,7 +116,7 @@
 
 - (void)updateGlobalFilter
 {
-    VehicleItemFilter *globalFilter = [self getFilter];
+    VehicleItemFilter *globalFilter = [self getGlobalFilter];
     
     globalFilter.minPrice = [self.minPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.minPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
     globalFilter.maxPrice = [self.maxPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.maxPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
@@ -135,6 +128,25 @@
     globalFilter.maxEngineVolume = [self.maxEngineVolumeTextField.text isEqualToString:@"Any"] ? 0 :[[self.maxEngineVolumeTextField.text stringByReplacingOccurrencesOfString:@" cc" withString:@""] integerValue];
     
     [self notifyGlobalFilterIsChanged];
+}
+
+#pragma mark - AppDelegate accessors
+
+- (VehicleItemFilter *)getGlobalFilter
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    
+	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
+}
+
+- (NSInteger)getCurrentSelectedRowIndexForPickerForTextField:(UITextField *)textField
+{
+    NSArray *dataForCurrentTextField = _inputFieldData[[NSNumber numberWithInteger:textField.tag]];
+    NSString *currentTextFieldText = textField.text;
+    
+    NSUInteger index = [dataForCurrentTextField indexOfObject:currentTextFieldText];
+    
+    return index == NSNotFound ? 0 : index;
 }
 
 #pragma mark - UIPickerView DataSource
@@ -171,6 +183,10 @@
 {
     _currentPickerData = _inputFieldData[[NSNumber numberWithInteger:textField.tag]];
     [_pickerView reloadAllComponents];
+    
+    NSInteger currecntSelectedRowIndexForPicker = [self getCurrentSelectedRowIndexForPickerForTextField:textField];
+    
+    [_pickerView selectRow:currecntSelectedRowIndexForPicker inComponent:0 animated:YES];
     
     return YES;
 }

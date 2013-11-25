@@ -27,6 +27,8 @@
     NSInteger _currentLoadedPageIndex;
 
     BOOL _isLoadedPageLast;
+    
+    NSString *_currentRequestId;
 }
 
 @property (nonatomic) NSUInteger indexForLoadMoreRow;
@@ -35,8 +37,6 @@
 
 @implementation OnlinerMotoVehiclesViewController
 
-@synthesize vehicleItemsRepository = _vehicleItemsRepository;
-@synthesize vehicleItemsProvider = _vehicleItemsProvider;
 @synthesize indexForLoadMoreRow;
 
 - (void)awakeFromNib
@@ -145,47 +145,38 @@
         VehicleItem *vehicleItemToPresent = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
         
         detailsViewController.isTaggingAvailable = [self checkIsTaggingAvailableForVehicleItem:vehicleItemToPresent];
-        detailsViewController.vehicleItemsRepository = self.vehicleItemsRepository;
-        detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
         detailsViewController.VehicleItem = vehicleItemToPresent;
     }
 }
 
-#pragma mark -- Vehicle Items Repository
+#pragma mark - AppDelegate accessors
 
-- (id<VehicleItemsRepositoryProtocol>)vehicleItemsRepository
+- (id<VehicleItemsRepositoryProtocol>)getGlobalVehicleItemsRepository
 {
-    if (_vehicleItemsRepository != nil)
-    {
-        return _vehicleItemsRepository;
-    }
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
     
-    _vehicleItemsRepository = [[OnlinerMotoVehicleItemsRepository alloc]
-                               initWithObjectContext:[(OnlinerMotoAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext]];
-    
-    return _vehicleItemsRepository;
+    return theDelegate.vehicleItemsRepository;
 }
 
-#pragma mark - Data providers
-
-- (id<VehicleItemsProviderProtocol>)vehicleItemsProvider
+- (id<VehicleItemsProviderProtocol>)getGlobalVehicleItemsProvider
 {
-    if (_vehicleItemsProvider != nil)
-    {
-        return _vehicleItemsProvider;
-    }
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
     
-    // todo: IK place all hardcoding in one location
-    _vehicleItemsProvider = [[OnlinerWebVehileItemsProvider alloc] init];
+    return theDelegate.vehicleItemsProvider;
+}
+
+- (VehicleItemFilter *)getGlobalFilter
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
     
-    return _vehicleItemsProvider;
+	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
 }
 
 #pragma mark - Private methods
 
 - (void)applyGlobalFilter
 {
-    [self.vehicleItemsProvider applyFilter:[self getFilter]];
+    [self.getGlobalVehicleItemsProvider applyFilter:[self getGlobalFilter]];
     [self resetData];
 }
 
@@ -196,13 +187,6 @@
     _isLoadedPageLast = NO;
     [self markFilterAsAlreadyApplied];
     [self.tableView reloadData];
-}
-
-- (VehicleItemFilter *)getFilter
-{
-    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
-    
-	return (VehicleItemFilter *) theDelegate.vehicleItemFilter;
 }
 
 - (BOOL)isFilterAlreadyApplied
@@ -252,7 +236,16 @@
 
 - (BOOL)checkIsTaggingAvailableForVehicleItem:(VehicleItem *)vehicleItem
 {
-    return ![self.vehicleItemsRepository isItemAlreadyPresentByDetailsUrl:vehicleItem.detailsUrl];
+    return ![[self getGlobalVehicleItemsRepository] isItemAlreadyPresentByDetailsUrl:vehicleItem.detailsUrl];
+}
+
+- (NSString *)createUniqueId
+{   
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    NSString *newId = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
+    CFRelease(uuid);
+    
+    return newId;
 }
 
 - (void)beginLoadNextPageAndWithFullAnimation:(BOOL)fullyAnimated
@@ -262,16 +255,25 @@
     [self showLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSArray *loadedVehicleItems = [self.vehicleItemsProvider getItemsFromIndex:(pageToLoadIndex * _pageSize)
-                                                                             count:_pageSize];
+        NSString *tempCurrentRequestId;
+        @synchronized(self)
+        {
+            _currentRequestId = [self createUniqueId];
+            tempCurrentRequestId = _currentRequestId;
+        }
+
+        NSArray *loadedVehicleItems = [[self getGlobalVehicleItemsProvider] getItemsFromIndex:(pageToLoadIndex * _pageSize)
+                                                                                        count:_pageSize];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self hideLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
-            
-            [self endLoadPageWithIndex:pageToLoadIndex
-                    loadedVehicleItems:loadedVehicleItems
-                totalVehicleItemsCount:self.vehicleItemsProvider.totalItemsCount];
+            if ([tempCurrentRequestId isEqualToString:_currentRequestId])
+            {
+                [self hideLoadingIndicatorsAndWithFullAnimation:fullyAnimated];
+                
+                [self endLoadPageWithIndex:pageToLoadIndex
+                        loadedVehicleItems:loadedVehicleItems
+                    totalVehicleItemsCount:[self getGlobalVehicleItemsProvider].totalItemsCount];
+            }
         });
     });
 }
