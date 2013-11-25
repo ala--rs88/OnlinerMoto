@@ -191,18 +191,22 @@
     
     if (_initialHttpBodyForFilter && ![_initialHttpBodyForFilter isEqualToString:@""])
     {
-        [completeHttpBody appendFormat:@"%@&", _initialHttpBodyForFilter];
+        [completeHttpBody appendString:_initialHttpBodyForFilter];
     }
     
     if (pageIndex > 0)
     {
+        if (![completeHttpBody isEqualToString:@""])
+        {
+            [completeHttpBody appendString:@"&"];
+        }
+        
         [completeHttpBody appendFormat:@"page=%u", pageIndex + 1];
     }  
     
     return [self syncLoadVehicleItemsWithHttpBodyData:[completeHttpBody dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
-// todo: try to get rid of side effect
 - (NSArray *)syncLoadVehicleItemsWithHttpBodyData:(NSData *)httpBodyData
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://mb.onliner.by/search"]];
@@ -247,7 +251,14 @@
         return 0;
     }
     
-    return [jsonObject[@"result"][@"counters"][@"realCount"] integerValue];        
+    @try
+    {
+        return [jsonObject[@"result"][@"counters"][@"realCount"] integerValue]; 
+    }
+    @catch (NSException *exception)
+    {
+        return 0;
+    }
 }
     
 + (NSArray *)parseJsonObjectForVehicleItems:(NSDictionary *)jsonObject
@@ -257,7 +268,17 @@
         return nil;
     }
     
-    NSString *html = jsonObject[@"result"][@"content"];
+    NSString *html;
+    
+    @try
+    {
+       html = jsonObject[@"result"][@"content"];
+    }
+    @catch (NSException *exception)
+    {
+        return nil;
+    }
+    
     
     NSError *error;
     HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
