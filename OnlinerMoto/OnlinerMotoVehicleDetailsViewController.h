@@ -8,13 +8,8 @@
 
 #import <Foundation/Foundation.h>
 @class VehicleItem;
-@protocol VehicleItemsRepositoryProtocol;
-@protocol VehicleItemsProviderProtocol;
 
 @interface OnlinerMotoVehicleDetailsViewController : UITableViewController <UICollectionViewDataSource>
-
-@property (strong, nonatomic) id<VehicleItemsRepositoryProtocol> vehicleItemsRepository;
-@property (strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
 @property (strong, nonatomic) VehicleItem *vehicleItem;
 @property (nonatomic) BOOL isTaggingAvailable;

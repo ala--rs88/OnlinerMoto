@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VehicleItemsRepositoryProtocol.h"
-#import "VehicleItemsProviderProtocol.h"
 
 @interface OnlinerMotoTaggedVehiclesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
-@property (readonly, strong, nonatomic) id<VehicleItemsRepositoryProtocol> vehicleItemsRepository;
-
-@property (readonly, strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

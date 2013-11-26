@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 @class VehicleItemFilter;
+@protocol VehicleItemsRepositoryProtocol;
+@protocol VehicleItemsProviderProtocol;
 
 @protocol OnlinerMotoAppDelegateProtocol
 
 @required
 
-@property (readonly, nonatomic, strong) VehicleItemFilter *vehicleItemFilter;
+@property (readonly, strong, nonatomic) id<VehicleItemsRepositoryProtocol> vehicleItemsRepository;
+@property (readonly, strong, nonatomic) id<VehicleItemsProviderProtocol> vehicleItemsProvider;
+@property (readonly, strong, nonatomic) VehicleItemFilter *vehicleItemFilter;
 
 @property (nonatomic) BOOL isFilterAlreadyApplied;
-
-// todo: IK move provider & repo here
 
 @end

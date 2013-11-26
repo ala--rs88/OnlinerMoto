@@ -72,8 +72,43 @@
         [inputFieldsKeys addObject:[NSNumber numberWithInteger:textField.tag]];
     }
     
-    NSArray *priceData = [[NSArray alloc] initWithObjects:@"Any", @"$100", @"$200", @"$500", @"$1000", @"$1500", @"$2000", nil];
-    NSArray *yearData = [[NSArray alloc] initWithObjects:@"Any", @"1990", @"2000", @"2005", @"2010", @"2015", nil];
+    NSArray *priceData = [[NSArray alloc] initWithObjects:@"Any",
+                                                          @"$100",
+                                                          @"$200",
+                                                          @"$500",
+                                                          @"$1000",
+                                                          @"$1500",
+                                                          @"$2000",
+                                                          @"$3000",
+                                                          @"$4000",
+                                                          @"$5000",
+                                                          @"$6000",
+                                                          @"$8000",
+                                                          @"$10000",
+                                                          @"$15000",
+                                                          @"$25000",
+                                                          @"$40000",
+                                                          @"$60000", nil];
+    NSArray *yearData = [[NSArray alloc] initWithObjects:@"Any",
+                                                         @"2014",
+                                                         @"2013",
+                                                         @"2012",
+                                                         @"2011",
+                                                         @"2010",
+                                                         @"2009",
+                                                         @"2008",
+                                                         @"2007",
+                                                         @"2006",
+                                                         @"2005",
+                                                         @"2004",
+                                                         @"2003",
+                                                         @"2002",
+                                                         @"2001",
+                                                         @"2000",
+                                                         @"1995",
+                                                         @"1990",
+                                                         @"1985",
+                                                         @"1980", nil];
     NSArray *engineVolumeData = [[NSArray alloc] initWithObjects:@"Any", @"150 cc", @"250 cc", @"300 cc", @"400 cc", @"600 cc", @"800 cc", @"1000 cc", @"1200 cc", @"1500 cc", nil];
     
     NSArray *inputDatas = [[NSArray alloc] initWithObjects:priceData, priceData, yearData, yearData, engineVolumeData, engineVolumeData, nil];

@@ -22,11 +22,6 @@
 
 @implementation OnlinerMotoTaggedVehiclesViewController
 
-@synthesize vehicleItemsRepository = _vehicleItemsRepository;
-@synthesize vehicleItemsProvider = _vehicleItemsProvider;
-
-
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -69,7 +64,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    _vehicleItemsToBeDisplayed = [self.vehicleItemsRepository getAllVehicleItems];
+    _vehicleItemsToBeDisplayed = [[self getGlobalVehicleItemsRepository] getAllVehicleItems];
     return [_vehicleItemsToBeDisplayed count];
 }
 
@@ -96,7 +91,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.vehicleItemsRepository removeVehicleItemByDetailsUrl:((VehicleItem *)_vehicleItemsToBeDisplayed[indexPath.row]).detailsUrl];
+        [[self getGlobalVehicleItemsRepository] removeVehicleItemByDetailsUrl:((VehicleItem *)_vehicleItemsToBeDisplayed[indexPath.row]).detailsUrl];
         [self.tableView reloadData];
     }
 }
@@ -108,40 +103,17 @@
         OnlinerMotoVehicleDetailsViewController *detailsViewController = [segue destinationViewController];
         
         detailsViewController.isTaggingAvailable = NO;
-        
-        detailsViewController.vehicleItemsRepository = self.vehicleItemsRepository;
-        detailsViewController.vehicleItemsProvider = self.vehicleItemsProvider;
         detailsViewController.VehicleItem = _vehicleItemsToBeDisplayed[[self.tableView indexPathForSelectedRow].row];
     }
 }
 
-#pragma mark -- Vehicle Items Repository
+#pragma mark - AppDelegate accessors
 
-- (id<VehicleItemsRepositoryProtocol>)vehicleItemsRepository
+- (id<VehicleItemsRepositoryProtocol>)getGlobalVehicleItemsRepository
 {
-    if (_vehicleItemsRepository != nil)
-    {
-        return _vehicleItemsRepository;
-    }
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
     
-    _vehicleItemsRepository = [[OnlinerMotoVehicleItemsRepository alloc]
-                               initWithObjectContext:[(OnlinerMotoAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext]];
-    
-    return _vehicleItemsRepository;
-}
-
-#pragma mark -- Vehicle Items Provider
-
-- (id<VehicleItemsProviderProtocol>)vehicleItemsProvider
-{
-    if (_vehicleItemsProvider != nil) {
-        return _vehicleItemsProvider;
-    }
-    
-    // todo: IK place all hardcoding in one location
-    _vehicleItemsProvider = [[OnlinerWebVehileItemsProvider alloc] init];
-    
-    return _vehicleItemsProvider;
+    return theDelegate.vehicleItemsRepository;
 }
 
 @end

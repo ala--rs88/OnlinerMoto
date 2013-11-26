@@ -9,6 +9,7 @@
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "VehicleItem.h"
 #import "VehicleItemDetails.h"
+#import "OnlinerMotoAppDelegateProtocol.h"
 #import "VehicleItemsRepositoryProtocol.h"
 #import "VehicleItemsProviderProtocol.h"
 #import "OnlinerMotoPhotoCell.h"
@@ -41,7 +42,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        VehicleItemDetails *itemDetails = [self.vehicleItemsProvider getItemDetailsForItem:self.vehicleItem];
+        VehicleItemDetails *itemDetails = [[self getGlobalVehicleItemsProvider] getItemDetailsForItem:self.vehicleItem];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideLoadingIndicators];
@@ -61,7 +62,7 @@
 
 - (IBAction)addVehicleItemToTagged:(id)sender
 {
-    [self.vehicleItemsRepository addVehicleItem:self.vehicleItem];
+    [[self getGlobalVehicleItemsRepository] addVehicleItem:self.vehicleItem];
     [self.addVehicleItemToTaggedButton setEnabled:NO];
     
     [OnlinerMotoVehicleDetailsViewController showMessage:@"Item marked as tagged"];
@@ -138,6 +139,22 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - AppDelegate accessors
+
+- (id<VehicleItemsRepositoryProtocol>)getGlobalVehicleItemsRepository
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    
+    return theDelegate.vehicleItemsRepository;
+}
+
+- (id<VehicleItemsProviderProtocol>)getGlobalVehicleItemsProvider
+{
+    id<OnlinerMotoAppDelegateProtocol> theDelegate = (id<OnlinerMotoAppDelegateProtocol>) [UIApplication sharedApplication].delegate;
+    
+    return theDelegate.vehicleItemsProvider;
 }
 
 #pragma mark -- Private Mehtods
