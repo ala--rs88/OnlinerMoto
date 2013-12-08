@@ -45,7 +45,6 @@
 		A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51218257134008F3089 /* VehicleItemDetails.m */; };
 		A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5161825C59D008F3089 /* VehicleItem.m */; };
 		A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */; };
-		A9FAC5241825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */; };
 		A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5271825E37E008F3089 /* OnlinerMotoVehicleItemCell.m */; };
 		A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */; };
 /* End PBXBuildFile section */
@@ -121,8 +120,6 @@
 		A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleItemsProviderProtocol.h; sourceTree = "<group>"; };
 		A9FAC51A1825C8A0008F3089 /* VehicleItemFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemFilter.h; sourceTree = "<group>"; };
 		A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemFilter.m; sourceTree = "<group>"; };
-		A9FAC5221825CF78008F3089 /* MockInMemoryVehicleItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockInMemoryVehicleItemsProvider.h; sourceTree = "<group>"; };
-		A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockInMemoryVehicleItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC5261825E37E008F3089 /* OnlinerMotoVehicleItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleItemCell.h; sourceTree = "<group>"; };
 		A9FAC5271825E37E008F3089 /* OnlinerMotoVehicleItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleItemCell.m; sourceTree = "<group>"; };
 		A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleDetailsViewController.h; sourceTree = "<group>"; };
@@ -318,8 +315,6 @@
 		A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAC5221825CF78008F3089 /* MockInMemoryVehicleItemsProvider.h */,
-				A9FAC5231825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m */,
 				A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */,
 				A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */,
 			);
@@ -465,7 +460,6 @@
 				A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */,
 				A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */,
 				A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */,
-				A9FAC5241825CF78008F3089 /* MockInMemoryVehicleItemsProvider.m in Sources */,
 				A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */,
 				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
 				A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */,

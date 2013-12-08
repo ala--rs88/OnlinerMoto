@@ -322,10 +322,6 @@
     HTMLNode *tdPhoto = [motoRowNode findChildOfClass:@"ph"];
     HTMLNode *tdCost = [motoRowNode findChildOfClass:@"cost lst"];
     
-    
-    // todo: handle EXTENDED rows
-    // todo: parse name postfix
-    
     HTMLNode *detailsUrlWithName = [[[tdTxt findChildTag:@"h2"] findChildTag:@"span"] findChildTag:@"a"];
     vehicleItem.detailsUrl = [NSString stringWithFormat:@"http://mb.onliner.by%@", [detailsUrlWithName getAttributeNamed:@"href"]];
     
@@ -377,7 +373,6 @@
     {
         if ([node nodetype] == HTMLPNode)
         {
-            // todo: clean strings up from html
             [description appendFormat:@"%@\n", [[node allContents] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         }
     }
