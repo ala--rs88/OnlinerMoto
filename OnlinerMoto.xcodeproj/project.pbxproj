@@ -32,7 +32,6 @@
 		A9FAC4A3182537ED008F3089 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4A2182537ED008F3089 /* Default@2x.png */; };
 		A9FAC4A5182537ED008F3089 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */; };
 		A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC4A6182537ED008F3089 /* OnlinerMoto.xcdatamodeld */; };
-		A9FAC4B0182537ED008F3089 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC4AF182537ED008F3089 /* SenTestingKit.framework */; };
 		A9FAC4B1182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
 		A9FAC4B2182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
 		A9FAC4B3182537ED008F3089 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC492182537ED008F3089 /* CoreData.framework */; };
@@ -101,7 +100,6 @@
 		A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A9FAC4A7182537ED008F3089 /* OnlinerMoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlinerMoto.xcdatamodel; sourceTree = "<group>"; };
 		A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlinerMotoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9FAC4AF182537ED008F3089 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A9FAC4B8182537ED008F3089 /* OnlinerMotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OnlinerMotoTests-Info.plist"; sourceTree = "<group>"; };
 		A9FAC4BA182537ED008F3089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoTests.h; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9FAC4B0182537ED008F3089 /* SenTestingKit.framework in Frameworks */,
 				A9FAC4B1182537ED008F3089 /* UIKit.framework in Frameworks */,
 				A9FAC4B2182537ED008F3089 /* Foundation.framework in Frameworks */,
 				A9FAC4B3182537ED008F3089 /* CoreData.framework in Frameworks */,
@@ -200,7 +197,6 @@
 				A9FAC48E182537ED008F3089 /* Foundation.framework */,
 				A9FAC490182537ED008F3089 /* CoreGraphics.framework */,
 				A9FAC492182537ED008F3089 /* CoreData.framework */,
-				A9FAC4AF182537ED008F3089 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -373,7 +369,7 @@
 			name = OnlinerMotoTests;
 			productName = OnlinerMotoTests;
 			productReference = A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -382,6 +378,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OnlinerMoto;
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = KarpovIV;
 			};
@@ -575,6 +572,7 @@
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -587,6 +585,7 @@
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -599,13 +598,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				INFOPLIST_FILE = "OnlinerMotoTests/OnlinerMotoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -616,13 +615,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				INFOPLIST_FILE = "OnlinerMotoTests/OnlinerMotoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

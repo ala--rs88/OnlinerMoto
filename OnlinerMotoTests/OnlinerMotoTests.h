@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 KarpovIV. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface OnlinerMotoTests : SenTestCase
+@interface OnlinerMotoTests : XCTestCase
 
 @end
