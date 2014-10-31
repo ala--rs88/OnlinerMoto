@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782E6BB91A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E6BB81A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m */; };
 		A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */; };
 		A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9305D24184238A300BA941C /* OnlinerMotoLoadMoreCell.m */; };
 		A934730C18428EA600E5F8B3 /* LoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A934730B18428EA600E5F8B3 /* LoadingIndicatorView.m */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		782E6BB71A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoCollectionViewLayout.h; sourceTree = "<group>"; };
+		782E6BB81A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoCollectionViewLayout.m; sourceTree = "<group>"; };
 		A92DE0E3183968FD0044ADCA /* OnlinerMotoPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoPhotoCell.h; sourceTree = "<group>"; };
 		A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoPhotoCell.m; sourceTree = "<group>"; };
 		A9305D23184238A300BA941C /* OnlinerMotoLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoLoadMoreCell.h; sourceTree = "<group>"; };
@@ -99,7 +102,7 @@
 		A9FAC4A2182537ED008F3089 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A9FAC4A7182537ED008F3089 /* OnlinerMoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlinerMoto.xcdatamodel; sourceTree = "<group>"; };
-		A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlinerMotoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OnlinerMotoTests.octest; path = OnlinerMotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FAC4B8182537ED008F3089 /* OnlinerMotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OnlinerMotoTests-Info.plist"; sourceTree = "<group>"; };
 		A9FAC4BA182537ED008F3089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoTests.h; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */,
 				A9DC521A1842E290004CF61B /* OnlinerMotoTabBarViewController.h */,
 				A9DC521B1842E290004CF61B /* OnlinerMotoTabBarViewController.m */,
+				782E6BB71A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.h */,
+				782E6BB81A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				A9FAC50618254ED5008F3089 /* OnlinerMotoFilterViewController.m in Sources */,
 				A9FAC50918254F00008F3089 /* OnlinerMotoVehiclesViewController.m in Sources */,
 				A9FAC50C18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m in Sources */,
+				782E6BB91A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m in Sources */,
 				A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */,
 				A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */,
 				A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */,
