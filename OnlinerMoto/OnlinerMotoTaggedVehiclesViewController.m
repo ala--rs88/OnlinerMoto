@@ -11,8 +11,9 @@
 #import "OnlinerWebVehileItemsProvider.h"
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "OnlinerMotoVehicleItemCell.h"
-#import "VehicleItem.h"
 #import "OnlinerMotoAppDelegate.h"
+
+#import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoTaggedVehiclesViewController ()
 {

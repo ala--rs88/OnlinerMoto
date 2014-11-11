@@ -8,9 +8,10 @@
 
 #import "OnlinerWebVehileItemsProvider.h"
 #import "HTMLParser.h"
-#import "VehicleItem.h"
 #import "VehicleItemDetails.h"
 #import "VehicleItemFilter.h"
+
+#import "OnlinerMoto-Swift.h"
 
 @interface OnlinerWebVehileItemsProvider()
 {

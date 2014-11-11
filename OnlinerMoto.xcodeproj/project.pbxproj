@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		782E6BB91A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 782E6BB81A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m */; };
+		78C6F2EE1A129870002DB9E5 /* VehicleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6F2ED1A129870002DB9E5 /* VehicleItem.swift */; };
 		A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */; };
 		A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9305D24184238A300BA941C /* OnlinerMotoLoadMoreCell.m */; };
 		A934730C18428EA600E5F8B3 /* LoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A934730B18428EA600E5F8B3 /* LoadingIndicatorView.m */; };
@@ -43,7 +44,6 @@
 		A9FAC50918254F00008F3089 /* OnlinerMotoVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC50818254F00008F3089 /* OnlinerMotoVehiclesViewController.m */; };
 		A9FAC50C18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC50B18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m */; };
 		A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51218257134008F3089 /* VehicleItemDetails.m */; };
-		A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5161825C59D008F3089 /* VehicleItem.m */; };
 		A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */; };
 		A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC5271825E37E008F3089 /* OnlinerMotoVehicleItemCell.m */; };
 		A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */; };
@@ -62,6 +62,9 @@
 /* Begin PBXFileReference section */
 		782E6BB71A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoCollectionViewLayout.h; sourceTree = "<group>"; };
 		782E6BB81A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoCollectionViewLayout.m; sourceTree = "<group>"; };
+		78C6F2EC1A129870002DB9E5 /* OnlinerMoto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnlinerMoto-Bridging-Header.h"; sourceTree = "<group>"; };
+		78C6F2ED1A129870002DB9E5 /* VehicleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItem.swift; sourceTree = "<group>"; };
+		78C6F2EF1A12A026002DB9E5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		A92DE0E3183968FD0044ADCA /* OnlinerMotoPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoPhotoCell.h; sourceTree = "<group>"; };
 		A92DE0E4183968FD0044ADCA /* OnlinerMotoPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoPhotoCell.m; sourceTree = "<group>"; };
 		A9305D23184238A300BA941C /* OnlinerMotoLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoLoadMoreCell.h; sourceTree = "<group>"; };
@@ -116,8 +119,6 @@
 		A9FAC50B18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoTaggedVehiclesViewController.m; sourceTree = "<group>"; };
 		A9FAC51118257134008F3089 /* VehicleItemDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemDetails.h; sourceTree = "<group>"; };
 		A9FAC51218257134008F3089 /* VehicleItemDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemDetails.m; sourceTree = "<group>"; };
-		A9FAC5151825C59D008F3089 /* VehicleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItem.h; sourceTree = "<group>"; };
-		A9FAC5161825C59D008F3089 /* VehicleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItem.m; sourceTree = "<group>"; };
 		A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleItemsProviderProtocol.h; sourceTree = "<group>"; };
 		A9FAC51A1825C8A0008F3089 /* VehicleItemFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemFilter.h; sourceTree = "<group>"; };
 		A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemFilter.m; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		A9FAC480182537ED008F3089 = {
 			isa = PBXGroup;
 			children = (
+				78C6F2EF1A12A026002DB9E5 /* MyPlayground.playground */,
 				A9FAC494182537ED008F3089 /* OnlinerMoto */,
 				A9FAC4B6182537ED008F3089 /* OnlinerMotoTests */,
 				A9FAC48B182537ED008F3089 /* Frameworks */,
@@ -207,6 +209,7 @@
 		A9FAC494182537ED008F3089 /* OnlinerMoto */ = {
 			isa = PBXGroup;
 			children = (
+				78C6F2EC1A129870002DB9E5 /* OnlinerMoto-Bridging-Header.h */,
 				A9A3DDC6183EB9BB006ED4CB /* Repositories */,
 				A99A0B7018299D7600AFF004 /* HTMLParser */,
 				A9FAC5251825E183008F3089 /* ViewModels */,
@@ -286,10 +289,9 @@
 			children = (
 				A9FAC51118257134008F3089 /* VehicleItemDetails.h */,
 				A9FAC51218257134008F3089 /* VehicleItemDetails.m */,
-				A9FAC5151825C59D008F3089 /* VehicleItem.h */,
-				A9FAC5161825C59D008F3089 /* VehicleItem.m */,
 				A9FAC51A1825C8A0008F3089 /* VehicleItemFilter.h */,
 				A9FAC51B1825C8A0008F3089 /* VehicleItemFilter.m */,
+				78C6F2ED1A129870002DB9E5 /* VehicleItem.swift */,
 			);
 			name = BusinessEntities;
 			sourceTree = "<group>";
@@ -461,7 +463,6 @@
 				A9FAC50C18254F1D008F3089 /* OnlinerMotoTaggedVehiclesViewController.m in Sources */,
 				782E6BB91A043A0B00E57CD2 /* OnlinerMotoCollectionViewLayout.m in Sources */,
 				A9FAC51318257134008F3089 /* VehicleItemDetails.m in Sources */,
-				A9FAC5171825C59E008F3089 /* VehicleItem.m in Sources */,
 				A9FAC51C1825C8A1008F3089 /* VehicleItemFilter.m in Sources */,
 				A9FAC5281825E37E008F3089 /* OnlinerMotoVehicleItemCell.m in Sources */,
 				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
@@ -470,6 +471,7 @@
 				A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */,
 				A92DE0E5183968FD0044ADCA /* OnlinerMotoPhotoCell.m in Sources */,
 				A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */,
+				78C6F2EE1A129870002DB9E5 /* VehicleItem.swift in Sources */,
 				A9DCE11018412EB100FFDACE /* VehicleItemData.m in Sources */,
 				A9305D25184238A300BA941C /* OnlinerMotoLoadMoreCell.m in Sources */,
 				A934730C18428EA600E5F8B3 /* LoadingIndicatorView.m in Sources */,
@@ -574,12 +576,16 @@
 		A9FAC4C2182537ED008F3089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlinerMoto/OnlinerMoto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -587,12 +593,15 @@
 		A9FAC4C3182537ED008F3089 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "OnlinerMoto/OnlinerMoto-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlinerMoto/OnlinerMoto-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

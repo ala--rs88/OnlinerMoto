@@ -11,11 +11,12 @@
 #import "OnlinerMotoLoadMoreCell.h"
 #import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"
-#import "VehicleItem.h"
 #import "VehicleItemFilter.h"
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "OnlinerMotoAppDelegate.h"
 #import "LoadingIndicatorView.h"
+
+#import "OnlinerMoto-Swift.h"
 
 #define DEFAULT_PAGE_SIZE 30
 

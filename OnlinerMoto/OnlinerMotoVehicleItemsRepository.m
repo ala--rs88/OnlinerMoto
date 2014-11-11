@@ -7,8 +7,9 @@
 //
 
 #import "OnlinerMotoVehicleItemsRepository.h"
-#import "VehicleItem.h"
 #import "VehicleItemData.h"
+
+#import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoVehicleItemsRepository ()
 
