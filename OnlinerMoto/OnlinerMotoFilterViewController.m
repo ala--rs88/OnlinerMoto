@@ -8,7 +8,8 @@
 
 #import "OnlinerMotoFilterViewController.h"
 #import "OnlinerMotoAppDelegateProtocol.h"
-#import "VehicleItemFilter.h"
+
+#import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoFilterViewController ()
 {
@@ -152,7 +153,7 @@
 - (void)updateGlobalFilter
 {
     VehicleItemFilter *globalFilter = [self getGlobalFilter];
-    
+
     globalFilter.minPrice = [self.minPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.minPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
     globalFilter.maxPrice = [self.maxPriceTextField.text isEqualToString:@"Any"] ? 0 :[[self.maxPriceTextField.text stringByReplacingOccurrencesOfString:@"$" withString:@""] integerValue];
     

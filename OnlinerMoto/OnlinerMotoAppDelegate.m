@@ -9,10 +9,11 @@
 #import "OnlinerMotoAppDelegate.h"
 #import "VehicleItemsRepositoryProtocol.h"
 #import "VehicleItemsProviderProtocol.h"
-#import "VehicleItemFilter.h"
 
 #import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"
+
+#import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoAppDelegate ()
 {
