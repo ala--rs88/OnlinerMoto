@@ -7,14 +7,10 @@
 //
 
 #import "OnlinerMotoVehiclesViewController.h"
-#import "OnlinerMotoVehicleItemCell.h"
-#import "OnlinerMotoLoadMoreCell.h"
 #import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"
-#import "VehicleItemFilter.h"
 #import "OnlinerMotoVehicleDetailsViewController.h"
 #import "OnlinerMotoAppDelegate.h"
-#import "LoadingIndicatorView.h"
 
 #import "OnlinerMoto-Swift.h"
 
