@@ -20,7 +20,7 @@
 
 - (void)applyFilter:(VehicleItemFilter *)filter;
 // todo: consider renaming
-- (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;
+- (NSArray *)getItemsFromIndex:(NSInteger)startIndex count:(NSInteger)itemsCount;
 - (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item;
 
 @end

@@ -18,8 +18,4 @@
 
 - (id)init;
 
-- (void)applyFilter:(VehicleItemFilter *)filter;
-- (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount;
-- (VehicleItemDetails *)getItemDetailsForItem:(VehicleItem *)item;
-
 @end

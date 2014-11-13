@@ -9,7 +9,7 @@
         <!--Onliner Moto Vehicles View Controller-->
         <scene sceneID="t0X-2T-Re8">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="jxT-1b-zZa" userLabel="Onliner Moto Vehicles View Controller" customClass="OnlinerMotoVehiclesViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="jxT-1b-zZa" userLabel="Onliner Moto Vehicles View Controller" customClass="OnlinerMotoVehiclesViewController" customModule="OnlinerMoto" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4sb-mu-KKN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -412,9 +412,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DmU-Nj-8Hh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="302"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="304"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eqR-C1-Fg1" customClass="OnlinerMotoCollectionViewFlowLayout">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eqR-C1-Fg1" customClass="OnlinerMotoCollectionViewFlowLayout" customModule="OnlinerMoto">
                                                         <size key="itemSize" width="320" height="300"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -602,7 +602,7 @@
         <!--Onliner Moto Tab Bar View Controller-->
         <scene sceneID="Fnj-a0-aTb">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="Aus-ez-P5x" customClass="OnlinerMotoTabBarViewController" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="Aus-ez-P5x" customClass="OnlinerMotoTabBarViewController" customModule="OnlinerMoto" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="AV8-hY-RDI">
@@ -633,6 +633,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CDo-Qy-Fes"/>
+        <segue reference="iMD-nr-MMw"/>
     </inferredMetricsTieBreakers>
 </document>

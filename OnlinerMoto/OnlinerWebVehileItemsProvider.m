@@ -108,7 +108,7 @@
     return (_totalVehicleItemsCount) < 0 ? 0 : _totalVehicleItemsCount;
 }
 
-- (NSArray *)getItemsFromIndex:(NSUInteger)startIndex count:(NSUInteger)itemsCount
+- (NSArray *)getItemsFromIndex:(NSInteger)startIndex count:(NSInteger)itemsCount
 {
     if ((startIndex % _onlinerPageSize) + itemsCount > _onlinerPageSize)
     {
