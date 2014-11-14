@@ -9,6 +9,7 @@ class A
     var s: String?
     
     let c = 5
+    var SC: String? = "XXX"
     
     func doWork(a: A) {
         println("QQA");
@@ -19,17 +20,7 @@ class A
         return "A doXXX"
     }
     
-    private func doAAA(array:[String], s?: String) -> String
-    {
-        if (array.isEmpty)
-        {
-            return "Empty"
-        }
-        else
-        {
-            return "Full"
-        }
-    }
+
 }
 
 class B : A
@@ -43,10 +34,5 @@ class B : A
 var a = A()
 var b = B()
 
-a.doXXX()
-b.doXXX()
-b.doYYY()
-var x: [String] = nil
-
-a.doAAA(["X", "Y"], s: "")
-a.doAAA([], s: nil)
+a.SC = nil
+a.SC == "XXX"

@@ -129,7 +129,7 @@
         <!--Onliner Moto Tagged Vehicles View Controller-->
         <scene sceneID="jp4-Fl-dQP">
             <objects>
-                <viewController id="J7P-8Z-5AM" customClass="OnlinerMotoTaggedVehiclesViewController" sceneMemberID="viewController">
+                <viewController id="J7P-8Z-5AM" customClass="OnlinerMotoTaggedVehiclesViewController" customModule="OnlinerMoto" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T6K-zG-uw7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -633,6 +633,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iMD-nr-MMw"/>
+        <segue reference="CDo-Qy-Fes"/>
     </inferredMetricsTieBreakers>
 </document>
