@@ -212,7 +212,7 @@
         <!--Onliner Moto Vehicle Details View Controller-->
         <scene sceneID="ZPd-ZO-jwH">
             <objects>
-                <tableViewController id="LZZ-Nv-f53" customClass="OnlinerMotoVehicleDetailsViewController" sceneMemberID="viewController">
+                <tableViewController id="LZZ-Nv-f53" customClass="OnlinerMotoVehicleDetailsViewController" customModule="OnlinerMoto" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Qm0-3s-rmh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -412,7 +412,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DmU-Nj-8Hh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="304"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="386" height="306"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eqR-C1-Fg1" customClass="OnlinerMotoCollectionViewFlowLayout" customModule="OnlinerMoto">
                                                         <size key="itemSize" width="320" height="300"/>

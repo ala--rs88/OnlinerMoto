@@ -11,6 +11,7 @@
 		7896CC171A17818100802916 /* VehicleItemsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC161A17818100802916 /* VehicleItemsRepositoryProtocol.swift */; };
 		7896CC191A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC181A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift */; };
 		7896CC1B1A178B4D00802916 /* VehicleItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC1A1A178B4D00802916 /* VehicleItemData.swift */; };
+		7896CC1D1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC1C1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift */; };
 		78C065A71A15075A00C06408 /* OnlinerMotoTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065A61A15075A00C06408 /* OnlinerMotoTabBarViewController.swift */; };
 		78C065A91A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065A81A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift */; };
 		78C065AB1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */; };
@@ -44,7 +45,6 @@
 		A9FAC4A5182537ED008F3089 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */; };
 		A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC4A6182537ED008F3089 /* OnlinerMoto.xcdatamodeld */; };
 		A9FAC50218254869008F3089 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC50118254869008F3089 /* MainStoryboard.storyboard */; };
-		A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +52,7 @@
 		7896CC161A17818100802916 /* VehicleItemsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		7896CC181A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoAppDelegateProtocol.swift; sourceTree = "<group>"; };
 		7896CC1A1A178B4D00802916 /* VehicleItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemData.swift; sourceTree = "<group>"; };
+		7896CC1C1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoVehicleDetailsViewController.swift; sourceTree = "<group>"; };
 		78C065A61A15075A00C06408 /* OnlinerMotoTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoTabBarViewController.swift; sourceTree = "<group>"; };
 		78C065A81A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoVehiclesViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +98,6 @@
 		A9FAC4B8182537ED008F3089 /* OnlinerMotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OnlinerMotoTests-Info.plist"; sourceTree = "<group>"; };
 		A9FAC4BA182537ED008F3089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9FAC50118254869008F3089 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleDetailsViewController.h; sourceTree = "<group>"; };
-		A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,13 +227,12 @@
 		A9FAC50318254E21008F3089 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */,
-				A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */,
 				78C065A61A15075A00C06408 /* OnlinerMotoTabBarViewController.swift */,
 				78C065A81A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift */,
 				78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */,
 				78C065AE1A164F7C00C06408 /* OnlinerMotoTaggedVehiclesViewController.swift */,
 				78C065B01A16594100C06408 /* OnlinerMotoFilterViewController.swift */,
+				7896CC1C1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -364,6 +362,7 @@
 				7896CC151A17793300802916 /* VehicleItemsProviderProtocol.swift in Sources */,
 				7896CC191A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift in Sources */,
 				A9FAC49F182537ED008F3089 /* OnlinerMotoAppDelegate.m in Sources */,
+				7896CC1D1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift in Sources */,
 				A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */,
 				78C462291A14193200170268 /* OnlinerMotoPhotoCell.swift in Sources */,
 				78C462231A14038100170268 /* VehicleItemFilter.swift in Sources */,
@@ -374,7 +373,6 @@
 				78C4622B1A141A8A00170268 /* OnlinerMotoVehicleItemCell.swift in Sources */,
 				A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */,
 				78C065A71A15075A00C06408 /* OnlinerMotoTabBarViewController.swift in Sources */,
-				A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */,
 				78C462251A14076800170268 /* LoadingIndicatorView.swift in Sources */,
 				A9A3DDC5183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m in Sources */,
 				78C462211A14005D00170268 /* VehicleItemDetails.swift in Sources */,
