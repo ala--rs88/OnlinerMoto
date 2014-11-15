@@ -8,6 +8,13 @@ class A
 {
     var s: String?
     
+    var m: String!
+    
+    init()
+    {
+        self.m = "M"
+    }
+    
     let c = 5
     var SC: String? = "XXX"
     
@@ -35,4 +42,18 @@ var a = A()
 var b = B()
 
 a.SC = nil
-a.SC == "XXX"
+
+
+var i: Int!
+if let x:String = a.SC
+{
+    i = 1
+}
+else
+{
+    i = 2
+}
+
+i
+
+

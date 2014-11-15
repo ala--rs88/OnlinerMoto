@@ -499,7 +499,7 @@
         <!--Onliner Moto Filter View Controller-->
         <scene sceneID="LAJ-Z6-h3q">
             <objects>
-                <viewController id="AZa-nm-W7k" customClass="OnlinerMotoFilterViewController" sceneMemberID="viewController">
+                <viewController id="AZa-nm-W7k" customClass="OnlinerMotoFilterViewController" customModule="OnlinerMoto" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYU-ov-08X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

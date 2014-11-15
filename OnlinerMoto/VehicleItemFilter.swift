@@ -10,12 +10,12 @@ import Foundation
 
 class VehicleItemFilter : NSObject
 {
-    var minPrice: UInt = 0
-    var maxPrice: UInt = 0
+    var minPrice: Int = 0
+    var maxPrice: Int = 0
     
-    var minYear: UInt = 0
-    var maxYear: UInt = 0
+    var minYear: Int = 0
+    var maxYear: Int = 0
     
-    var minEngineVolume: UInt = 0
-    var maxEngineVolume: UInt = 0
+    var minEngineVolume: Int = 0
+    var maxEngineVolume: Int = 0
 }
