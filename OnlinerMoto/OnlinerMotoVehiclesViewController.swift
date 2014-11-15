@@ -224,13 +224,14 @@ class OnlinerMotoVehiclesViewController : UIViewController, UITableViewDelegate,
             
             var loadedVehicleItems = [VehicleItem]()
             
-            var loadedVehicleItemsFoundation = self.getGlobalVehicleItemsProvider().getItemsFromIndex(
+            if let loadedVehicleItemsFoundation = self.getGlobalVehicleItemsProvider().getItemsFromIndex(
                 pageToLoadIndex * self.pageSize,
                 count: self.pageSize)
-            
-            for vehicleItem in loadedVehicleItemsFoundation
             {
-                loadedVehicleItems.append(vehicleItem as VehicleItem)
+                for vehicleItem in loadedVehicleItemsFoundation
+                {
+                    loadedVehicleItems.append(vehicleItem as VehicleItem)
+                }
             }
             
             dispatch_async(dispatch_get_main_queue()) {
