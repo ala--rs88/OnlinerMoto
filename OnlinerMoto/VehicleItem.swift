@@ -12,10 +12,10 @@ class VehicleItem : NSObject
 {
     var vehicleId: NSNumber = 0
     var briefDescription: String?
-    var mileage: UInt = 0
-    var year: UInt = 0
+    var mileage: Int = 0
+    var year: Int = 0
     var name: String?
-    var price: UInt = 0
+    var price: Int = 0
     var detailsUrl: String?
     var mainPhoto: NSData?
 }

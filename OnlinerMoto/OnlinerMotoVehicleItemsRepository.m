@@ -7,8 +7,6 @@
 //
 
 #import "OnlinerMotoVehicleItemsRepository.h"
-#import "VehicleItemData.h"
-
 #import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoVehicleItemsRepository ()
@@ -137,10 +135,10 @@
         // todo: consider automapping
         vehicleItem.detailsUrl = vehicleItemData.detailsUrl;
         vehicleItem.name = vehicleItemData.name;
-        vehicleItem.price = [vehicleItemData.price integerValue];
+        vehicleItem.price = vehicleItemData.price.integerValue;
         vehicleItem.mainPhoto = vehicleItemData.mainPhoto;
-        vehicleItem.mileage = [vehicleItemData.mileage integerValue];
-        vehicleItem.year = [vehicleItemData.year integerValue];
+        vehicleItem.mileage = vehicleItemData.mileage.integerValue;
+        vehicleItem.year = vehicleItemData.year.integerValue;
         vehicleItem.briefDescription = vehicleItemData.briefDescription;
         
         [vehicleItems insertObject:vehicleItem atIndex:0];
