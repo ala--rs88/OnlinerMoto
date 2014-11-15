@@ -199,7 +199,7 @@ class OnlinerMotoVehiclesViewController : UIViewController, UITableViewDelegate,
     
     private func isTaggingAvailableForVehicleItem(vehicleItem: VehicleItem) -> Bool
     {
-        var isAvailable = !(getGlobalVehicleItemsRepository().isItemAlreadyPresentByDetailsUrl(vehicleItem.detailsUrl))
+        var isAvailable = !(getGlobalVehicleItemsRepository().isItemAlreadyPresentByDetailsUrl(vehicleItem.detailsUrl!))
         return isAvailable
     }
     
@@ -222,17 +222,9 @@ class OnlinerMotoVehiclesViewController : UIViewController, UITableViewDelegate,
                 tempCurrentRequestId = self.currentRequestId
             }
             
-            var loadedVehicleItems = [VehicleItem]()
-            
-            if let loadedVehicleItemsFoundation = self.getGlobalVehicleItemsProvider().getItemsFromIndex(
+            var loadedVehicleItems = self.getGlobalVehicleItemsProvider().getItems(
                 pageToLoadIndex * self.pageSize,
-                count: self.pageSize)
-            {
-                for vehicleItem in loadedVehicleItemsFoundation
-                {
-                    loadedVehicleItems.append(vehicleItem as VehicleItem)
-                }
-            }
+                itemsCount: self.pageSize) ?? [VehicleItem]()
             
             dispatch_async(dispatch_get_main_queue()) {
                 if (tempCurrentRequestId == self.currentRequestId)

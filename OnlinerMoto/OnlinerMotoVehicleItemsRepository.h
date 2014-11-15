@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VehicleItemsRepositoryProtocol.h"
+#import "OnlinerMoto-Swift.h"
+
 @class VehicleItem;
 
 @interface OnlinerMotoVehicleItemsRepository : NSObject <VehicleItemsRepositoryProtocol>

@@ -7,8 +7,6 @@
 //
 
 #import "OnlinerMotoAppDelegate.h"
-#import "VehicleItemsRepositoryProtocol.h"
-#import "VehicleItemsProviderProtocol.h"
 
 #import "OnlinerMotoVehicleItemsRepository.h"
 #import "OnlinerWebVehileItemsProvider.h"

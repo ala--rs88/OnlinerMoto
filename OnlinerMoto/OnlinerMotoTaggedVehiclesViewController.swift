@@ -27,7 +27,7 @@ class OnlinerMotoTaggedVehiclesViewController : UIViewController, UITableViewDel
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        self.vehicleItemsToBeDisplayed = getGlobalVehicleItemsRepository().getAllVehicleItems() as [VehicleItem]
+        self.vehicleItemsToBeDisplayed = getGlobalVehicleItemsRepository().getAllVehicleItems() ?? [VehicleItem]()
         var count = self.vehicleItemsToBeDisplayed.count
         
         return count
@@ -61,7 +61,7 @@ class OnlinerMotoTaggedVehiclesViewController : UIViewController, UITableViewDel
             var repository = getGlobalVehicleItemsRepository()
             var item = self.vehicleItemsToBeDisplayed[indexPath.row] as VehicleItem
             
-            repository.removeVehicleItemByDetailsUrl(item.detailsUrl)
+            repository.removeVehicleItemByDetailsUrl(item.detailsUrl!)
             self.tableView.reloadData()
         }
     }

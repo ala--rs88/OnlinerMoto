@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VehicleItemsProviderProtocol.h"
+#import "OnlinerMoto-Swift.h"
+
 @class VehicleItem;
 @class VehicleItemDetails;
 @class VehicleItemFilter;

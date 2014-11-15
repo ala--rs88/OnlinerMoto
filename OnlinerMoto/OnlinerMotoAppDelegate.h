@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OnlinerMotoAppDelegateProtocol.h"
+
+#import "OnlinerMoto-Swift.h"
+
 @class VehicleItemFilter;
 
 @interface OnlinerMotoAppDelegate : UIResponder <UIApplicationDelegate, OnlinerMotoAppDelegateProtocol>

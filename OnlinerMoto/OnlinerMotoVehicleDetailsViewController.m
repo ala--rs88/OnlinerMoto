@@ -7,9 +7,6 @@
 //
 
 #import "OnlinerMotoVehicleDetailsViewController.h"
-#import "OnlinerMotoAppDelegateProtocol.h"
-#import "VehicleItemsRepositoryProtocol.h"
-#import "VehicleItemsProviderProtocol.h"
 
 #import "OnlinerMoto-Swift.h"
 

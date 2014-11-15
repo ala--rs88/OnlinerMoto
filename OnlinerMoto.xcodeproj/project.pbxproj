@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7896CC151A17793300802916 /* VehicleItemsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC141A17793300802916 /* VehicleItemsProviderProtocol.swift */; };
+		7896CC171A17818100802916 /* VehicleItemsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC161A17818100802916 /* VehicleItemsRepositoryProtocol.swift */; };
+		7896CC191A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896CC181A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift */; };
 		78C065A71A15075A00C06408 /* OnlinerMotoTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065A61A15075A00C06408 /* OnlinerMotoTabBarViewController.swift */; };
 		78C065A91A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065A81A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift */; };
 		78C065AB1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7896CC141A17793300802916 /* VehicleItemsProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemsProviderProtocol.swift; sourceTree = "<group>"; };
+		7896CC161A17818100802916 /* VehicleItemsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		7896CC181A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoAppDelegateProtocol.swift; sourceTree = "<group>"; };
 		78C065A61A15075A00C06408 /* OnlinerMotoTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoTabBarViewController.swift; sourceTree = "<group>"; };
 		78C065A81A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoVehiclesViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +85,6 @@
 		A99A0B7318299D9C00AFF004 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
 		A99A0B7418299D9C00AFF004 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 		A99A0B7718299DE400AFF004 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemsRepositoryProtocol.h; sourceTree = "<group>"; };
 		A9A3DDC3183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleItemsRepository.h; sourceTree = "<group>"; };
 		A9A3DDC4183EB9A2006ED4CB /* OnlinerMotoVehicleItemsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleItemsRepository.m; sourceTree = "<group>"; };
 		A9C1A6271843D10B005DE8E3 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		A9C1A62D1843D849005DE8E3 /* star--gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star--gold.png"; sourceTree = "<group>"; };
 		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
 		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
-		A9DC52191842D686004CF61B /* OnlinerMotoAppDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoAppDelegateProtocol.h; sourceTree = "<group>"; };
 		A9DCE10E18412EB100FFDACE /* VehicleItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleItemData.h; sourceTree = "<group>"; };
 		A9DCE10F18412EB100FFDACE /* VehicleItemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleItemData.m; sourceTree = "<group>"; };
 		A9FAC489182537ED008F3089 /* OnlinerMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +116,6 @@
 		A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoTests.h; sourceTree = "<group>"; };
 		A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoTests.m; sourceTree = "<group>"; };
 		A9FAC50118254869008F3089 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleItemsProviderProtocol.h; sourceTree = "<group>"; };
 		A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleDetailsViewController.h; sourceTree = "<group>"; };
 		A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,9 +293,9 @@
 		A9FAC5181825C5EC008F3089 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAC5191825C626008F3089 /* VehicleItemsProviderProtocol.h */,
-				A9A3DDC2183EB64E006ED4CB /* VehicleItemsRepositoryProtocol.h */,
-				A9DC52191842D686004CF61B /* OnlinerMotoAppDelegateProtocol.h */,
+				7896CC141A17793300802916 /* VehicleItemsProviderProtocol.swift */,
+				7896CC161A17818100802916 /* VehicleItemsRepositoryProtocol.swift */,
+				7896CC181A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -435,11 +438,14 @@
 			files = (
 				78C065AF1A164F7C00C06408 /* OnlinerMotoTaggedVehiclesViewController.swift in Sources */,
 				A9FAC49B182537ED008F3089 /* main.m in Sources */,
+				7896CC151A17793300802916 /* VehicleItemsProviderProtocol.swift in Sources */,
+				7896CC191A17877100802916 /* OnlinerMotoAppDelegateProtocol.swift in Sources */,
 				A9FAC49F182537ED008F3089 /* OnlinerMotoAppDelegate.m in Sources */,
 				A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */,
 				78C462291A14193200170268 /* OnlinerMotoPhotoCell.swift in Sources */,
 				78C462231A14038100170268 /* VehicleItemFilter.swift in Sources */,
 				78C065A91A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift in Sources */,
+				7896CC171A17818100802916 /* VehicleItemsRepositoryProtocol.swift in Sources */,
 				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
 				A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */,
 				78C4622B1A141A8A00170268 /* OnlinerMotoVehicleItemCell.swift in Sources */,
