@@ -43,24 +43,9 @@
 		A9FAC4A3182537ED008F3089 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4A2182537ED008F3089 /* Default@2x.png */; };
 		A9FAC4A5182537ED008F3089 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */; };
 		A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC4A6182537ED008F3089 /* OnlinerMoto.xcdatamodeld */; };
-		A9FAC4B1182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
-		A9FAC4B2182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
-		A9FAC4B3182537ED008F3089 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC492182537ED008F3089 /* CoreData.framework */; };
-		A9FAC4BB182537ED008F3089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC4B9182537ED008F3089 /* InfoPlist.strings */; };
-		A9FAC4BE182537ED008F3089 /* OnlinerMotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */; };
 		A9FAC50218254869008F3089 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FAC50118254869008F3089 /* MainStoryboard.storyboard */; };
 		A9FC221B18382C65003B69A3 /* OnlinerMotoVehicleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A9FAC4B4182537ED008F3089 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9FAC481182537ED008F3089 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9FAC488182537ED008F3089;
-			remoteInfo = OnlinerMoto;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7896CC141A17793300802916 /* VehicleItemsProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemsProviderProtocol.swift; sourceTree = "<group>"; };
@@ -109,11 +94,8 @@
 		A9FAC4A2182537ED008F3089 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A9FAC4A4182537ED008F3089 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A9FAC4A7182537ED008F3089 /* OnlinerMoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlinerMoto.xcdatamodel; sourceTree = "<group>"; };
-		A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlinerMotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FAC4B8182537ED008F3089 /* OnlinerMotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OnlinerMotoTests-Info.plist"; sourceTree = "<group>"; };
 		A9FAC4BA182537ED008F3089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoTests.h; sourceTree = "<group>"; };
-		A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoTests.m; sourceTree = "<group>"; };
 		A9FAC50118254869008F3089 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9FC221918382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerMotoVehicleDetailsViewController.h; sourceTree = "<group>"; };
 		A9FC221A18382C64003B69A3 /* OnlinerMotoVehicleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerMotoVehicleDetailsViewController.m; sourceTree = "<group>"; };
@@ -129,16 +111,6 @@
 				A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */,
 				A9FAC491182537ED008F3089 /* CoreGraphics.framework in Frameworks */,
 				A9FAC493182537ED008F3089 /* CoreData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9FAC4AA182537ED008F3089 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FAC4B1182537ED008F3089 /* UIKit.framework in Frameworks */,
-				A9FAC4B2182537ED008F3089 /* Foundation.framework in Frameworks */,
-				A9FAC4B3182537ED008F3089 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				A9FAC489182537ED008F3089 /* OnlinerMoto.app */,
-				A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,8 +210,6 @@
 		A9FAC4B6182537ED008F3089 /* OnlinerMotoTests */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAC4BC182537ED008F3089 /* OnlinerMotoTests.h */,
-				A9FAC4BD182537ED008F3089 /* OnlinerMotoTests.m */,
 				A9FAC4B7182537ED008F3089 /* Supporting Files */,
 			);
 			path = OnlinerMotoTests;
@@ -338,25 +307,6 @@
 			productReference = A9FAC489182537ED008F3089 /* OnlinerMoto.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A9FAC4AD182537ED008F3089 /* OnlinerMotoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9FAC4C4182537ED008F3089 /* Build configuration list for PBXNativeTarget "OnlinerMotoTests" */;
-			buildPhases = (
-				A9FAC4A9182537ED008F3089 /* Sources */,
-				A9FAC4AA182537ED008F3089 /* Frameworks */,
-				A9FAC4AB182537ED008F3089 /* Resources */,
-				A9FAC4AC182537ED008F3089 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A9FAC4B5182537ED008F3089 /* PBXTargetDependency */,
-			);
-			name = OnlinerMotoTests;
-			productName = OnlinerMotoTests;
-			productReference = A9FAC4AE182537ED008F3089 /* OnlinerMotoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -381,7 +331,6 @@
 			projectRoot = "";
 			targets = (
 				A9FAC488182537ED008F3089 /* OnlinerMoto */,
-				A9FAC4AD182537ED008F3089 /* OnlinerMotoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,31 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9FAC4AB182537ED008F3089 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FAC4BB182537ED008F3089 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A9FAC4AC182537ED008F3089 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9FAC485182537ED008F3089 /* Sources */ = {
@@ -461,23 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9FAC4A9182537ED008F3089 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FAC4BE182537ED008F3089 /* OnlinerMotoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A9FAC4B5182537ED008F3089 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9FAC488182537ED008F3089 /* OnlinerMoto */;
-			targetProxy = A9FAC4B4182537ED008F3089 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A9FAC497182537ED008F3089 /* InfoPlist.strings */ = {
@@ -588,40 +497,6 @@
 			};
 			name = Release;
 		};
-		A9FAC4C5182537ED008F3089 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OnlinerMoto.app/OnlinerMoto";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
-				INFOPLIST_FILE = "OnlinerMotoTests/OnlinerMotoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		A9FAC4C6182537ED008F3089 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OnlinerMoto.app/OnlinerMoto";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OnlinerMoto/OnlinerMoto-Prefix.pch";
-				INFOPLIST_FILE = "OnlinerMotoTests/OnlinerMotoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -639,15 +514,6 @@
 			buildConfigurations = (
 				A9FAC4C2182537ED008F3089 /* Debug */,
 				A9FAC4C3182537ED008F3089 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A9FAC4C4182537ED008F3089 /* Build configuration list for PBXNativeTarget "OnlinerMotoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9FAC4C5182537ED008F3089 /* Debug */,
-				A9FAC4C6182537ED008F3089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
