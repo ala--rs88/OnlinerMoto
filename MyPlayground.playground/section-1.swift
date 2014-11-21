@@ -56,8 +56,13 @@ else
 
 i
 
-var n: NSNumber = 3
 
+var aaa: A? = A()
+aaa = nil
 
+-1 > aaa?.c
 
-
+var test = [1, 2, 3, 4, 5]
+var s = 2
+var n = 3
+var test2 = test[s...s+n-1]

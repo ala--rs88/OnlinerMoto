@@ -12,7 +12,7 @@ import Foundation
 {
     var totalItemsCount: Int { get }
     
-    func applyFilter(filter: VehicleItemFilter)
+    func applyFilter(filter: VehicleItemFilter?)
     
     func getItems(startIndex: Int, itemsCount:Int) -> [VehicleItem]?
     func getItemDetailsForItem(item: VehicleItem) -> VehicleItemDetails?

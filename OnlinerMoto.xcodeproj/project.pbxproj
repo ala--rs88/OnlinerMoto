@@ -17,6 +17,8 @@
 		78C065AB1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */; };
 		78C065AF1A164F7C00C06408 /* OnlinerMotoTaggedVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065AE1A164F7C00C06408 /* OnlinerMotoTaggedVehiclesViewController.swift */; };
 		78C065B11A16594100C06408 /* OnlinerMotoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C065B01A16594100C06408 /* OnlinerMotoFilterViewController.swift */; };
+		78C0E4A61A1E8A8E008CBB45 /* HTMLNode+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C0E4A51A1E8A8E008CBB45 /* HTMLNode+Swift.m */; };
+		78C25C511A1A7304009F1DFE /* OnlinerWebVehileItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C25C501A1A7304009F1DFE /* OnlinerWebVehileItemsProvider.swift */; };
 		78C462211A14005D00170268 /* VehicleItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C462201A14005D00170268 /* VehicleItemDetails.swift */; };
 		78C462231A14038100170268 /* VehicleItemFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C462221A14038100170268 /* VehicleItemFilter.swift */; };
 		78C462251A14076800170268 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C462241A14076800170268 /* LoadingIndicatorView.swift */; };
@@ -32,7 +34,6 @@
 		A9C1A62B1843D10B005DE8E3 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A6281843D10B005DE8E3 /* star.png */; };
 		A9C1A62C1843D10B005DE8E3 /* text-list.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A6291843D10B005DE8E3 /* text-list.png */; };
 		A9C1A62E1843D849005DE8E3 /* star--gold.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1A62D1843D849005DE8E3 /* star--gold.png */; };
-		A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */; };
 		A9FAC48D182537ED008F3089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48C182537ED008F3089 /* UIKit.framework */; };
 		A9FAC48F182537ED008F3089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC48E182537ED008F3089 /* Foundation.framework */; };
 		A9FAC491182537ED008F3089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAC490182537ED008F3089 /* CoreGraphics.framework */; };
@@ -58,6 +59,9 @@
 		78C065AA1A15158400C06408 /* OnlinerMotoVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoVehiclesViewController.swift; sourceTree = "<group>"; };
 		78C065AE1A164F7C00C06408 /* OnlinerMotoTaggedVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoTaggedVehiclesViewController.swift; sourceTree = "<group>"; };
 		78C065B01A16594100C06408 /* OnlinerMotoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerMotoFilterViewController.swift; sourceTree = "<group>"; };
+		78C0E4A41A1E8A8E008CBB45 /* HTMLNode+Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTMLNode+Swift.h"; sourceTree = "<group>"; };
+		78C0E4A51A1E8A8E008CBB45 /* HTMLNode+Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTMLNode+Swift.m"; sourceTree = "<group>"; };
+		78C25C501A1A7304009F1DFE /* OnlinerWebVehileItemsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlinerWebVehileItemsProvider.swift; sourceTree = "<group>"; };
 		78C462201A14005D00170268 /* VehicleItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemDetails.swift; sourceTree = "<group>"; };
 		78C462221A14038100170268 /* VehicleItemFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleItemFilter.swift; sourceTree = "<group>"; };
 		78C462241A14076800170268 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
@@ -78,8 +82,6 @@
 		A9C1A6281843D10B005DE8E3 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		A9C1A6291843D10B005DE8E3 /* text-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-list.png"; sourceTree = "<group>"; };
 		A9C1A62D1843D849005DE8E3 /* star--gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star--gold.png"; sourceTree = "<group>"; };
-		A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinerWebVehileItemsProvider.h; sourceTree = "<group>"; };
-		A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinerWebVehileItemsProvider.m; sourceTree = "<group>"; };
 		A9FAC489182537ED008F3089 /* OnlinerMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinerMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FAC48C182537ED008F3089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9FAC48E182537ED008F3089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78C0E4A31A1E89BF008CBB45 /* Interoperability */ = {
+			isa = PBXGroup;
+			children = (
+				78C6F2EC1A129870002DB9E5 /* OnlinerMoto-Bridging-Header.h */,
+				78C0E4A41A1E8A8E008CBB45 /* HTMLNode+Swift.h */,
+				78C0E4A51A1E8A8E008CBB45 /* HTMLNode+Swift.m */,
+			);
+			name = Interoperability;
+			sourceTree = "<group>";
+		};
 		A99A0B7018299D7600AFF004 /* HTMLParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +182,7 @@
 		A9FAC494182537ED008F3089 /* OnlinerMoto */ = {
 			isa = PBXGroup;
 			children = (
-				78C6F2EC1A129870002DB9E5 /* OnlinerMoto-Bridging-Header.h */,
+				78C0E4A31A1E89BF008CBB45 /* Interoperability */,
 				A9A3DDC6183EB9BB006ED4CB /* Repositories */,
 				A99A0B7018299D7600AFF004 /* HTMLParser */,
 				A9FAC5251825E183008F3089 /* ViewModels */,
@@ -268,8 +280,7 @@
 		A9FAC51D1825C96A008F3089 /* VehicleItemsProviders */ = {
 			isa = PBXGroup;
 			children = (
-				A9D2F1E6182839610047829D /* OnlinerWebVehileItemsProvider.h */,
-				A9D2F1E7182839610047829D /* OnlinerWebVehileItemsProvider.m */,
+				78C25C501A1A7304009F1DFE /* OnlinerWebVehileItemsProvider.swift */,
 			);
 			name = VehicleItemsProviders;
 			sourceTree = "<group>";
@@ -365,10 +376,11 @@
 				7896CC1D1A179CCA00802916 /* OnlinerMotoVehicleDetailsViewController.swift in Sources */,
 				A9FAC4A8182537ED008F3089 /* OnlinerMoto.xcdatamodeld in Sources */,
 				78C462291A14193200170268 /* OnlinerMotoPhotoCell.swift in Sources */,
+				78C25C511A1A7304009F1DFE /* OnlinerWebVehileItemsProvider.swift in Sources */,
 				78C462231A14038100170268 /* VehicleItemFilter.swift in Sources */,
 				78C065A91A150B8700C06408 /* OnlinerMotoCollectionViewFlowLayout.swift in Sources */,
 				7896CC171A17818100802916 /* VehicleItemsRepositoryProtocol.swift in Sources */,
-				A9D2F1E8182839610047829D /* OnlinerWebVehileItemsProvider.m in Sources */,
+				78C0E4A61A1E8A8E008CBB45 /* HTMLNode+Swift.m in Sources */,
 				A99A0B7518299D9C00AFF004 /* HTMLNode.m in Sources */,
 				78C4622B1A141A8A00170268 /* OnlinerMotoVehicleItemCell.swift in Sources */,
 				A99A0B7618299D9C00AFF004 /* HTMLParser.m in Sources */,

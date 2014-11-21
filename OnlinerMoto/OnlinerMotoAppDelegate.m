@@ -9,7 +9,6 @@
 #import "OnlinerMotoAppDelegate.h"
 
 #import "OnlinerMotoVehicleItemsRepository.h"
-#import "OnlinerWebVehileItemsProvider.h"
 
 #import "OnlinerMoto-Swift.h"
 

@@ -45,6 +45,10 @@ class OnlinerMotoTaggedVehiclesViewController : UIViewController, UITableViewDel
         {
             cell.mainImageView.image = UIImage(data: mainPhotoData)
         }
+        else
+        {
+            cell.mainImageView.image = nil
+        }
         cell.priceLabel.text = String(item.price)
         cell.yearLabel.text = String(item.year)
 
