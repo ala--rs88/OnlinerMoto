@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="VehicleItem" representedClassName="VehicleItemData" syncable="YES">
+    <entity name="VehicleItem" representedClassName="OnlinerMoto.VehicleItemData" syncable="YES">
         <attribute name="briefDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="detailsUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mainPhoto" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -11,6 +11,6 @@
         <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VehicleItem" positionX="0" positionY="0" width="128" height="163"/>
+        <element name="VehicleItem" positionX="0" positionY="0" width="128" height="165"/>
     </elements>
 </model>

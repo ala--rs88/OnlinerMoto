@@ -7,9 +7,6 @@
 //
 
 #import "OnlinerMotoAppDelegate.h"
-
-#import "OnlinerMotoVehicleItemsRepository.h"
-
 #import "OnlinerMoto-Swift.h"
 
 @interface OnlinerMotoAppDelegate ()
