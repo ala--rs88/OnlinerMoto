@@ -115,12 +115,12 @@ class OnlinerWebVehileItemsProvider : NSObject, VehicleItemsProviderProtocol
             var httpBody = ""
             
             var filterValuesGettersRepresentations: [(VehicleItemFilter -> Int, String)] = [
-                ({ $0.minPrice }, "min-price=%u&"),
-                ({ $0.maxPrice }, "max-price=%u&"),
-                ({ $0.minYear }, "min-year=%u&"),
-                ({ $0.maxYear }, "max-year=%u&"),
-                ({ $0.minEngineVolume }, "min-capacity=%u&"),
-                ({ $0.maxEngineVolume }, "max-capacity=%u&")
+                ({ $0.minPrice }, "min-price"),
+                ({ $0.maxPrice }, "max-price"),
+                ({ $0.minYear }, "min-year"),
+                ({ $0.maxYear }, "max-year"),
+                ({ $0.minEngineVolume }, "min-capacity"),
+                ({ $0.maxEngineVolume }, "max-capacity")
             ]
             
             for (valueGetterBlock, httpParameterFormat) in filterValuesGettersRepresentations
