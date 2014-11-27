@@ -11,9 +11,6 @@ import Foundation
 @UIApplicationMain
 class OnlinerMotoAppDelegate : UIResponder, UIApplicationDelegate, OnlinerMotoAppDelegateProtocol
 {
-    private let REPOSITORY_LOCK_QUEUE = dispatch_queue_create("com.OnlinerMoto.RepositoryLockQueue", DISPATCH_QUEUE_SERIAL)
-    private let PROVIDER_LOCK_QUEUE = dispatch_queue_create("com.OnlinerMoto.ProviderLockQueue", DISPATCH_QUEUE_SERIAL)
-    
     private lazy var managedObjectModel: NSManagedObjectModel = {
         var modelUrl = NSBundle.mainBundle().URLForResource("OnlinerMoto", withExtension: "momd")!
         var model = NSManagedObjectModel(contentsOfURL: modelUrl)

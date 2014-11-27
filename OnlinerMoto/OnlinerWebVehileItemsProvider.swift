@@ -67,13 +67,18 @@ class OnlinerWebVehileItemsProvider : NSObject, VehicleItemsProviderProtocol
         var rangeLength = itemsCount
         
         if (self.loadedVehicleItems == nil
-            || rangeStartIndex > self.loadedVehicleItems!.count)
+            || rangeStartIndex >= self.loadedVehicleItems!.count)
         {
             return nil
         }
         
-        var itemsRange: [VehicleItem]?
+        if (rangeStartIndex+rangeLength > self.loadedVehicleItems!.count
+            && self.loadedVehicleItems!.count > 0)
+        {
+            rangeLength = self.loadedVehicleItems!.count - rangeStartIndex;
+        }
         
+        var itemsRange: [VehicleItem]?
         if let items: [VehicleItem] = self.loadedVehicleItems
         {
             itemsRange = Array(items[rangeStartIndex...rangeStartIndex+rangeLength-1])
@@ -153,9 +158,10 @@ class OnlinerWebVehileItemsProvider : NSObject, VehicleItemsProviderProtocol
     {
         var completeHttpBody = ""
         
+        println("self.initialHttpBodyForFilter: \(self.initialHttpBodyForFilter)")
         if let filter = self.initialHttpBodyForFilter
         {
-            if (filter == "")
+            if (filter != "")
             {
                 completeHttpBody += filter
             }
@@ -170,6 +176,8 @@ class OnlinerWebVehileItemsProvider : NSObject, VehicleItemsProviderProtocol
             
             completeHttpBody += "page=\(pageIndex + 1)"
         }
+        
+        println("http params: \(completeHttpBody)")
         
         var vehicleItems = self.syncLoadVehicleItemsWithHttpBodyData(completeHttpBody.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
         
@@ -259,11 +267,16 @@ class OnlinerWebVehileItemsProvider : NSObject, VehicleItemsProviderProtocol
             return 0
         }
         
-        var result = jsonObject.valueForKey("result") as NSDictionary?
-        var counters = result?.valueForKey("counters") as NSDictionary?
-        var realCount = counters?.valueForKey("realCount") as Int?
+        var totalCount = 0
         
-        var totalCount = realCount? ?? 0
+        if (jsonObject.valueForKey("result") is NSDictionary)
+        {
+            var result = jsonObject.valueForKey("result") as NSDictionary?
+            var counters = result?.valueForKey("counters") as NSDictionary?
+            var realCount = counters?.valueForKey("realCount") as Int?
+            
+            totalCount = realCount? ?? 0
+        }
         
         return totalCount
     }
